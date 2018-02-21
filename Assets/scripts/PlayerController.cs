@@ -136,6 +136,27 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+    void FireHarpoon()
+    {
+        float startTime = Time.time;
+        while (startTime + harpoonChargeTime > Time.time)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {;
+                break;
+            }
+            startTime += Time.deltaTime;
+
+        }
+        if (startTime > harpoonChargeTime)
+        {
+            Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
+            if (Input.GetMouseButtonUp(0))
+            {
+                timestamp = Time.time + cooldown;
+            }
+        }
+    }
     IEnumerator InvulnTimer()
     {
         IsInvincible = true;
