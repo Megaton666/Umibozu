@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3be13ec92da0e95449c0546abd4139f5
+timeCreated: 1517949034
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - splash: {fileID: 8300000, guid: c6b6b09bcf162564190cf18eac1947ca, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

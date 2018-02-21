@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: f477d8756ad208e45999bb4d6486a19f
+timeCreated: 1517933786
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Healthbar: {instanceID: 0}
+  - GameOver: {instanceID: 0}
+  - PowerupSound: {fileID: 8300000, guid: e76ee2cc9c463024da41b1d493c63faf, type: 3}
+  - EnemycollideSound: {fileID: 8300000, guid: b173e40a7e683cd4aa773ba496c9f34a, type: 3}
+  - HarpoonSound: {fileID: 8300000, guid: a2c9e7cc35cd228439dc5380484d0482, type: 3}
+  - projectile: {fileID: 1267723743087896, guid: 4819c9946e9e5304a83a8df9e7042fdd,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
