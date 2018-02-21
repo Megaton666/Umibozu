@@ -14,16 +14,17 @@ public class PlayerController : MonoBehaviour {
     public AudioClip HarpoonLoad;
     public AudioClip GameoverSound;
     public AudioClip batteryReload;
-    public AudioClip cooldownSound;
     public GameObject projectile;
     public GameObject GameOverScreen;
     public GameObject gameOverMenu;
 
 
+    private bool harpoonPrimed = false;
+    private float startTime = 0.0f;
+    private float harpoonChargeTime = 0.8f;
     private float rotationZ = 0f;
     private bool IsInvincible = false;
     private float Accel;
-    private float timestamp;
     private float cooldown;
     private Rigidbody2D rb;
     private AudioSource audiosource;
@@ -53,18 +54,7 @@ public class PlayerController : MonoBehaviour {
      
         rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
         LimitSpeed();
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (Time.time >= timestamp)
-            {
-                StartCoroutine(FireHarpoon());
-                timestamp = Time.time + cooldown;
-            }
-            else
-            {
-                audiosource.PlayOneShot(cooldownSound);
-            }
-        }
+        ChargeHarpoon();
         TurnSideways(moveHorizontal);
         HealthbarFill();
         Boundaries(8.4f, 3.7f);
@@ -78,23 +68,7 @@ public class PlayerController : MonoBehaviour {
             TakeDamage(1);
             audiosource.PlayOneShot(EnemycollideSound, 2f);
             StartCoroutine(InvulnTimer());
-        }
-        //else if (other.gameObject.CompareTag("PowerUp"))
-        //{
-        //    other.gameObject.SetActive(false);
-        //    int randNum = Random.Range(0, 2);
-        //    if (randNum == 1)
-        //    {
-        //        audiosource.PlayOneShot(PowerupSound, 1.5f);
-        //        StartCoroutine(PowerUpTime(5));
-        //    }
-        //    else
-        //    {
-        //        GameObject.Find("Searchlight").GetComponent<SearchlightOnOff>().battery = 100;
-        //        audiosource.PlayOneShot(batteryReload, 1.5f);
-        //    }
-        //}
-        
+        }  
     }
 
     void CheckAlive()
@@ -136,11 +110,31 @@ public class PlayerController : MonoBehaviour {
             Healthbar.value = Health;
         }
     }
-    IEnumerator FireHarpoon()
+
+    void ChargeHarpoon()
     {
-        audiosource.PlayOneShot(HarpoonLoad);
-        yield return new WaitForSeconds(0.8f);
-        Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
+        if (Input.GetButtonDown("Fire1"))
+        {
+            startTime = Time.time;
+            audiosource.PlayOneShot(HarpoonLoad);
+        }
+
+        if (Input.GetButton("Fire1"))
+        {
+            if (startTime + harpoonChargeTime <= Time.time)
+                {
+                if (!harpoonPrimed)
+                {
+                    Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
+                    harpoonPrimed = true;
+                }
+            }
+        }
+        if (Input.GetButtonUp("Fire1") && harpoonPrimed == true)
+        {
+            harpoonPrimed = false;
+        }
+
     }
     IEnumerator InvulnTimer()
     {
