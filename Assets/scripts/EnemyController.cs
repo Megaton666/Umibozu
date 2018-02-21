@@ -26,13 +26,6 @@ public class EnemyController : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            Health--;
-        }
-    }
 
     void OnTriggerExit2D(Collider2D other)
     {

@@ -25,7 +25,7 @@ public class ProjectileMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!Input.GetMouseButton(0) && Distance == 0)
+        if (!Input.GetButton("Fire1") && Distance == 0)
         {
             audiosource.Stop();
             transform.parent = null;
@@ -43,20 +43,23 @@ public class ProjectileMove : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (speed != 0)
         {
-            Destroy(gameObject);
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                other.GetComponent<EnemyController>().Health--;
+                Destroy(gameObject);
+            }
+
+            else if (other.gameObject.CompareTag("PowerUp"))
+            {
+                audiosource.PlayOneShot(pickupDestroySound);
+                Destroy(other);
+                Destroy(gameObject);
+            }
         }
 
-        else if (other.gameObject.CompareTag("PowerUp"))
-        {
-            audiosource.PlayOneShot(pickupDestroySound);
-            Destroy(other);
-            Destroy(gameObject);
-        }
     }
-
-
 }
