@@ -428,7 +428,6 @@ MonoBehaviour:
   HarpoonLoad: {fileID: 8300000, guid: ccbad98d3259f79499c2acfeedcf3b92, type: 3}
   GameoverSound: {fileID: 8300000, guid: 5ac6bb806f4da4944b94046c2a1ab29d, type: 3}
   batteryReload: {fileID: 8300000, guid: 66582ed6d85f2414682795e659f604a5, type: 3}
-  cooldownSound: {fileID: 8300000, guid: 42138defef8e4ab4f9b937da7596a27e, type: 3}
   projectile: {fileID: 1624420410135226, guid: 4819c9946e9e5304a83a8df9e7042fdd, type: 2}
   GameOverScreen: {fileID: 1084160987}
   gameOverMenu: {fileID: 1600014409}
@@ -1388,7 +1387,7 @@ Light:
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
-  m_CookieSize: 10
+  m_CookieSize: 20
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
