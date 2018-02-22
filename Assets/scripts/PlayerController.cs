@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour {
     private float rotationZ = 0f;
     private bool IsInvincible = false;
     private float Accel;
-    private float cooldown;
     private Rigidbody2D rb;
     private AudioSource audiosource;
     private Transform harpoon;
@@ -42,7 +41,6 @@ public class PlayerController : MonoBehaviour {
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
         Accel = AccelInit;
-        cooldown = 1.5f;
         Health = MaxHealth;
         Healthbar.maxValue = Health;
     }
@@ -135,27 +133,6 @@ public class PlayerController : MonoBehaviour {
             harpoonPrimed = false;
         }
 
-    }
-    void FireHarpoon()
-    {
-        float startTime = Time.time;
-        while (startTime + harpoonChargeTime > Time.time)
-        {
-            if (Input.GetMouseButtonUp(0))
-            {;
-                break;
-            }
-            startTime += Time.deltaTime;
-
-        }
-        if (startTime > harpoonChargeTime)
-        {
-            Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
-            if (Input.GetMouseButtonUp(0))
-            {
-                timestamp = Time.time + cooldown;
-            }
-        }
     }
     IEnumerator InvulnTimer()
     {
