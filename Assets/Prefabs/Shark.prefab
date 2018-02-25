@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114503097445285790}
   - component: {fileID: 50965854730040964}
   - component: {fileID: 60077399423738354}
+  - component: {fileID: 95872425479567874}
   m_Layer: 8
   m_Name: Shark
   m_TagString: Enemy
@@ -192,6 +193,23 @@ PolygonCollider2D:
       - {x: -0.041449547, y: -2.5364633}
       - {x: -0.025158882, y: -2.5411065}
       - {x: -0.023612022, y: -2.5635877}
+--- !u!95 &95872425479567874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234687953787206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f9331b6771d693428ccb44fbd26af53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114503097445285790
 MonoBehaviour:
   m_ObjectHideFlags: 1
