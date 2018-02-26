@@ -19,9 +19,10 @@ public class PlayerController : MonoBehaviour {
     public GameObject gameOverMenu;
 
 
+    private new SpriteRenderer renderer;
     private bool harpoonPrimed = false;
     private float startTime = 0.0f;
-    private float harpoonChargeTime = 0.8f;
+    private float harpoonChargeTime = 0.6f;
     private float rotationZ = 0f;
     private bool IsInvincible = false;
     private float Accel;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public int Health;
+    [HideInInspector]
     public float MaxSpeed;
 
     void Start ()
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         Accel = AccelInit;
         Health = MaxHealth;
         Healthbar.maxValue = Health;
+        renderer = GetComponent<SpriteRenderer>();
     }
 
 
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && !IsInvincible )
+        if ((other.gameObject.CompareTag("Enemy1") || other.gameObject.CompareTag("Enemy2") || other.gameObject.CompareTag("EnemyProjectile")) && !IsInvincible )
         {
             TakeDamage(1);
             audiosource.PlayOneShot(EnemycollideSound, 2f);
@@ -73,6 +76,9 @@ public class PlayerController : MonoBehaviour {
     {
         if (Healthbar.value <= 0)
         {
+            GetComponent<AudioSource>().Stop();
+            GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
+            GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
             audiosource.PlayOneShot(GameoverSound, 2.0f);
             GameOverScreen.SetActive(true);
             gameOverMenu.SetActive(true);
@@ -142,26 +148,26 @@ public class PlayerController : MonoBehaviour {
     IEnumerator InvulnTimer()
     {
         IsInvincible = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
         IsInvincible = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
     }
     
     void LimitSpeed()

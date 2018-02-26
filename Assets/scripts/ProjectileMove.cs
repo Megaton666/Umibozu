@@ -47,12 +47,16 @@ public class ProjectileMove : MonoBehaviour
     {
         if (speed != 0)
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            if (other.gameObject.CompareTag("Enemy1"))
             {
-                other.GetComponent<EnemyController>().Health--;
+                other.GetComponent<SharkController>().Health--;
                 Destroy(gameObject);
             }
-
+            else if (other.gameObject.CompareTag("Enemy2"))
+            {
+                other.GetComponent<SquidController>().Health--;
+                Destroy(gameObject);
+            }
             else if (other.gameObject.CompareTag("PowerUp"))
             {
                 audiosource.PlayOneShot(pickupDestroySound);
