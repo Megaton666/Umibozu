@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour {
         {
             startTime = Time.time;
             audiosource.clip = HarpoonLoad;
+            audiosource.volume = 1;
             audiosource.Play();
         }
 
@@ -138,6 +139,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonUp("Fire1"))
         {
             audiosource.Stop();
+            audiosource.volume = 1;
             if (harpoonPrimed)
             {
                 harpoonPrimed = false;

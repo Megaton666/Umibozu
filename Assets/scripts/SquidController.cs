@@ -12,12 +12,13 @@ public class SquidController : MonoBehaviour {
     private GameObject player;
     private AudioSource audiosource;
     private bool IsSpooked = false;
-    private bool InCooldown = false;
+    private bool InCooldown = true;
 
     void Start ()
     {
 		audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         player = GameObject.Find("Player");
+        StartCoroutine(WaitForCooldown());
     }
 	
 
@@ -32,7 +33,7 @@ public class SquidController : MonoBehaviour {
             if (!InCooldown)
             {
  
-                StartCoroutine(spitInk());
+                StartCoroutine(SpitInk());
             }
         }
         else
@@ -68,7 +69,7 @@ public class SquidController : MonoBehaviour {
         }
     }
 
-    IEnumerator spitInk()
+    IEnumerator SpitInk()
     {
         InCooldown = true;
         if (Random.Range(0, 3) == 0)
@@ -77,6 +78,12 @@ public class SquidController : MonoBehaviour {
             Instantiate(inkBall, transform.position, rot);
         }
         yield return new WaitForSeconds(1);
+        InCooldown = false;
+    }
+
+    IEnumerator WaitForCooldown()
+    {
+        yield return new WaitForSeconds(3);
         InCooldown = false;
     }
 }
