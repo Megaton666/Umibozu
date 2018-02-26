@@ -2,17 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxController : MonoBehaviour {
+public class InkController : MonoBehaviour {
 
-
-    void Start () {
+    public float speed;
+	void Start ()
+    {
 		
 	}
 	
-	void FixedUpdate () {
+	
+	void FixedUpdate ()
+    {
         Vector3 Position = transform.position;
-        Position.y -= 0.02f;
+        Position += transform.up * speed;
         transform.position = Position;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
