@@ -164,6 +164,7 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         instructions.text = "";
         level = 2;
+        startOfLevel = Time.time;
     }
     IEnumerator SecondScene()
     {
@@ -177,5 +178,6 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         instructions.text = "";
         level = 3;
+        startOfLevel = Time.time;
     }
 }
