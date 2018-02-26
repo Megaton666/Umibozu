@@ -12,19 +12,21 @@ public class LevelManager : MonoBehaviour {
 
     private AudioSource audiosource;
     private ObjectSpawn spawner;
-    private bool tutorial = true;
+    private bool tutorial;
     private int level;
     private float startOfLevel;
     private float timestamp;
     private float cooldown;
     void Start ()
     {
+        tutorial = true;
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         startOfLevel = Time.time;
         level = 1;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         if (level == 1) StartCoroutine(Tutorial());
         instructions.text = "";
+
     }
 
 
