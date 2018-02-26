@@ -49,9 +49,9 @@ public class LevelManager : MonoBehaviour {
                     cooldown = Random.Range(1.5f, 3.0f);
                 }
 
-                if (aura.cookieSize > 15)
+                if (aura.cookieSize > 16)
                 {
-                    aura.cookieSize -= 0.02f;
+                    aura.cookieSize -= 0.01f;
                 }
                 if (Time.time - startOfLevel >= 60)
                 {
@@ -63,7 +63,38 @@ public class LevelManager : MonoBehaviour {
         }
         else if(level == 2)
         {
+            if (Time.time >= timestamp)
+            {
+                int randNum = Random.Range(0, 100);
+                if (randNum < 70)
+                {
+                    spawner.SpawnSharkRandom(15);
+                }
+                else if (randNum >= 70 && randNum < 80)
+                {
+                    spawner.SpawnSquidRandom();
+                }
+                else if (randNum >= 80 && randNum < 95)
+                {
+                    spawner.SpawnCrateRandom();
+                }
+                else
+                {
+                    spawner.SpawnCliffsRandom(Random.Range(1, 3));
+                }
+                timestamp = Time.time + cooldown;
+                cooldown = Random.Range(1.5f, 3.0f);
+            }
 
+            if (aura.cookieSize > 12)
+            {
+                aura.cookieSize -= 0.01f;
+            }
+            if (Time.time - startOfLevel >= 60)
+            {
+                StartCoroutine(SecondScene());
+                level = 0;
+            }
         }
         else if (level == 3)
         {
@@ -112,6 +143,10 @@ public class LevelManager : MonoBehaviour {
         instructions.text = "The different abilities are, respectively, battery recharge, repair kit, increased spotlight spread, and a siren that scares away enemies";
         yield return new WaitForSeconds(5f);
         instructions.text = "";
+        yield return new WaitForSeconds(5f);
+        instructions.text = "Level 1";
+        yield return new WaitForSeconds(3f);
+        instructions.text = "";
         tutorial = false;
         cooldown = Random.Range(1.5f, 3.5f);
         startOfLevel = Time.time;
@@ -119,9 +154,28 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FirstScene()
     {
+        yield return new WaitForSeconds(5f);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(10, -7, 0));
         Instantiate(shadow, new Vector3(10, -7, 0), rot);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 2.0f);
+        yield return new WaitForSeconds(7f);
+        instructions.text = "Level 2";
+        yield return new WaitForSeconds(3f);
+        instructions.text = "";
+        level = 2;
+    }
+    IEnumerator SecondScene()
+    {
+        yield return new WaitForSeconds(5f);
+        Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(-10, 1, 0));
+        Instantiate(shadow, new Vector3(-10, 1, 0), rot);
+        yield return new WaitForSeconds(3f);
+        audiosource.PlayOneShot(growl, 3.0f);
+        yield return new WaitForSeconds(7f);
+        instructions.text = "Level 3";
+        yield return new WaitForSeconds(3f);
+        instructions.text = "";
+        level = 3;
     }
 }

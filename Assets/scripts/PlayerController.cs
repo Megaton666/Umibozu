@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy1") || other.gameObject.CompareTag("Enemy2")) && !IsInvincible )
+        if ((other.gameObject.CompareTag("Enemy1") || other.gameObject.CompareTag("Enemy2") || other.gameObject.CompareTag("EnemyProjectile")) && !IsInvincible )
         {
             TakeDamage(1);
             audiosource.PlayOneShot(EnemycollideSound, 2f);

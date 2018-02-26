@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9773b49df32484b8f106bd905e4a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 1
   Speed: 0.08
   onDeathSound: {fileID: 8300000, guid: f4a6bc102a674284790a6ddc7204ebe2, type: 3}
   inkBall: {fileID: 1090644362176690, guid: 923cbe48eb8696b4fa7934ae2a92eac1, type: 2}
