@@ -74,7 +74,9 @@ public class SquidController : MonoBehaviour {
         InCooldown = true;
         if (Random.Range(0, 3) == 0)
         {
-            Quaternion rot = Quaternion.FromToRotation(Vector2.up, player.transform.position - transform.position);
+            Quaternion rot = Quaternion.FromToRotation(Vector2.up, Vector2.right);
+            Instantiate(inkBall, transform.position, rot);
+            rot = Quaternion.FromToRotation(Vector2.up, Vector2.left);
             Instantiate(inkBall, transform.position, rot);
         }
         yield return new WaitForSeconds(1);
