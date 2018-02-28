@@ -33,10 +33,6 @@ public class SearchlightOnOff : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            TurnOnOff();
-        }
         batteryBar.value = battery;
         if (IsOn)
         {
