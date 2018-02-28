@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     public int MaxHealth;
+    public int sharkDamage;
+    public int squidDamage;
+    public int inkDamage;
+    public int rockDamage;
     public float MaxSpeedInit;
     public float AccelInit;
     public Slider Healthbar;
@@ -64,12 +68,33 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy1") || other.gameObject.CompareTag("Enemy2") || other.gameObject.CompareTag("EnemyProjectile")) && !IsInvincible )
+        if (!IsInvincible)
         {
-            TakeDamage(1);
-            audiosource.PlayOneShot(EnemycollideSound, 2f);
-            StartCoroutine(InvulnTimer());
-        }  
+            if (other.gameObject.CompareTag("Enemy1"))
+            {
+                TakeDamage(sharkDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("Enemy2"))
+            {
+                TakeDamage(squidDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("EnemyProjectile"))
+            {
+                TakeDamage(inkDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("Rock"))
+            {
+                TakeDamage(rockDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+        }
     }
 
     void CheckAlive()
@@ -79,6 +104,7 @@ public class PlayerController : MonoBehaviour {
             GetComponent<AudioSource>().Stop();
             GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
             GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
+            audiosource.Stop();
             audiosource.PlayOneShot(GameoverSound, 2.0f);
             GameOverScreen.SetActive(true);
             gameOverMenu.SetActive(true);
