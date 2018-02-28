@@ -2987,7 +2987,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 1526460611}
   aura: {fileID: 528850238}
-  shadow: {fileID: 1507091101569210, guid: 73efe50406140dd4db5b7b52476159a3, type: 2}
+  shadow1: {fileID: 1507091101569210, guid: 73efe50406140dd4db5b7b52476159a3, type: 2}
+  shadow2: {fileID: 1371833052055414, guid: 8aafde3c377d98f4593e6f97aaa8f66d, type: 2}
+  shadow3: {fileID: 1883498831824800, guid: de84381de5bd4d64ab2b55085ebf8c45, type: 2}
+  shadow4: {fileID: 1883498831824800, guid: de84381de5bd4d64ab2b55085ebf8c45, type: 2}
   growl: {fileID: 8300000, guid: 11953333e5d7c6b43aab3925edc698ca, type: 3}
   level1Time: 60
   level2Time: 60
