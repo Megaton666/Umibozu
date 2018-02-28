@@ -134,7 +134,7 @@ public class LevelManager : MonoBehaviour {
         instructions.text = "";
         yield return new WaitForSeconds(0.5f);
         instructions.text = "Picking up crates grants you single-use abilities";
-        spawner.SpawnCrate(-3);
+        spawner.SpawnCrate(-3, 0);
         yield return new WaitForSeconds(7f);
         instructions.text = "";
         yield return new WaitForSeconds(0.5f);
