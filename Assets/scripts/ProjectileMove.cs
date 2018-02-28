@@ -16,8 +16,9 @@ public class ProjectileMove : MonoBehaviour
     
     void Start()
     {
-        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
+        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[2];
         audiosource.clip = harpoonHold;
+        audiosource.volume = 1f;
         audiosource.Play();
         Distance = 0;
         speed = 0.0f;
