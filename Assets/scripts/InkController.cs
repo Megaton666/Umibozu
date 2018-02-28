@@ -5,11 +5,20 @@ using UnityEngine;
 public class InkController : MonoBehaviour {
 
     public float speed;
+
+    private float Distance;
+
 	void Start ()
     {
-		
+        Distance = 0;
 	}
-	
+	void Update()
+    {
+        if (Distance >= 6)
+        {
+            Destroy(gameObject);
+        }
+    }
 	
 	void FixedUpdate ()
     {
@@ -17,6 +26,7 @@ public class InkController : MonoBehaviour {
         Position += transform.up * speed;
         Position.y -= 0.02f;
         transform.position = Position;
+        Distance += speed;
     }
 
     void OnTriggerStay2D(Collider2D other)
