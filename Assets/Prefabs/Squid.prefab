@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114776856117868808}
   - component: {fileID: 50646383853433442}
   - component: {fileID: 61938395247061370}
+  - component: {fileID: 95984149549095812}
   m_Layer: 8
   m_Name: Squid
   m_TagString: Enemy2
@@ -78,8 +79,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0187037, y: 1.010014}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 7.5}
+    pivot: {x: 0.5, y: 0.64108616}
+    oldSize: {x: 2.1599998, y: 7.11}
     newSize: {x: 2.4, y: 7.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3151705, y: 5.479972}
   m_EdgeRadius: 0
+--- !u!95 &95984149549095812
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858275288354014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5aaf7bda84f55247ae58c55ce40dade, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114776856117868808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,10 +156,10 @@ SpriteRenderer:
   m_SortingLayerID: -1432222225
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 596239245d4ae854a89aaf1ee4dc6b04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfe8c39e755ab4041b4671343bbf0b1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.4, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
