@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BoxController : MonoBehaviour {
 
+    public int charge;
 
     void Start () {
-		
 	}
 	
 	void FixedUpdate () {
