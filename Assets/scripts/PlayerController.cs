@@ -58,18 +58,14 @@ public class PlayerController : MonoBehaviour {
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
+            TurnSideways(moveHorizontal);
             rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
             ChargeHarpoon();
         }
     }
     void FixedUpdate () {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-     
-        rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
         LimitSpeed();
         
-        TurnSideways(moveHorizontal);
         HealthbarFill();
         Boundaries(8.4f, 3.7f);
         CheckAlive();
@@ -168,6 +164,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
                     harpoonPrimed = true;
+                    audiosource.Stop();
                 }
             }
         }

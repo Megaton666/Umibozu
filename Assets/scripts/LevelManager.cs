@@ -225,8 +225,10 @@ public class LevelManager : MonoBehaviour {
     IEnumerator FirstScene()
     {
         yield return new WaitForSeconds(5f);
-        Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(10, -7, 0));
-        Instantiate(shadow1, new Vector3(10, -7, 0), rot);
+        Vector3 pointOfOrigin = new Vector3(10, -7, 0);
+        Vector3 dest = new Vector3(0, 0, 0);
+        Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
+        Instantiate(shadow2, pointOfOrigin, rot);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 1.0f);
         yield return new WaitForSeconds(7f);
@@ -239,8 +241,10 @@ public class LevelManager : MonoBehaviour {
     IEnumerator SecondScene()
     {
         yield return new WaitForSeconds(5f);
-        Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(-10, 1, 0));
-        Instantiate(shadow2, new Vector3(-10, 1, 0), rot);
+        Vector3 pointOfOrigin = new Vector3(-10, 1, 0);
+        Vector3 dest = new Vector3(0, 0, 0);
+        Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
+        Instantiate(shadow2, pointOfOrigin, rot);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 2.0f);
         yield return new WaitForSeconds(7f);
@@ -253,7 +257,17 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator ThirdScene()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5f);
+        Vector3 pointOfOrigin = new Vector3(0, -6, 0);
+        Vector3 dest = new Vector3(0, 6, 0);
+        Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
+        Instantiate(shadow2, pointOfOrigin, rot);
+        yield return new WaitForSeconds(2f);
+        audiosource.PlayOneShot(growl, 3.0f);
+        yield return new WaitForSeconds(7f);
+        instructions.text = "Level 4";
+        yield return new WaitForSeconds(3f);
+        instructions.text = "";
         level = 4;
         startOfLevel = Time.time;
     }
