@@ -2989,6 +2989,10 @@ MonoBehaviour:
   aura: {fileID: 528850238}
   shadow: {fileID: 1507091101569210, guid: 73efe50406140dd4db5b7b52476159a3, type: 2}
   growl: {fileID: 8300000, guid: 11953333e5d7c6b43aab3925edc698ca, type: 3}
+  level1Time: 60
+  level2Time: 60
+  level3Time: 60
+  level4Time: 60
 --- !u!1 &1503604551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +3374,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7d58c86d5a99d18418a6239e0bb9a126, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
