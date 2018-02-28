@@ -15,6 +15,7 @@ public class InkController : MonoBehaviour {
     {
         Vector3 Position = transform.position;
         Position += transform.up * speed;
+        Position.y -= 0.02f;
         transform.position = Position;
     }
 

@@ -420,6 +420,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 4
+  sharkDamage: 1
+  squidDamage: 1
+  inkDamage: 1
+  rockDamage: 1
   MaxSpeedInit: 0.75
   AccelInit: 0.15
   Healthbar: {fileID: 479951628}

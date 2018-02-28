@@ -40,6 +40,10 @@ public class SearchlightOnOff : MonoBehaviour {
                 TurnOnOff();
             }
         }
+        else if (battery < 25)
+        {
+            battery += 0.01f;
+        }
     }
 
     void TurnOnOff()

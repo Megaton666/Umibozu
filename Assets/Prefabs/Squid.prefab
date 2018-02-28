@@ -102,6 +102,7 @@ MonoBehaviour:
   Health: 1
   Speed: 0.08
   onDeathSound: {fileID: 8300000, guid: f4a6bc102a674284790a6ddc7204ebe2, type: 3}
+  shootSound: {fileID: 8300000, guid: 4dcb3c58b0475da46bf53b675c559285, type: 3}
   inkBall: {fileID: 1090644362176690, guid: 923cbe48eb8696b4fa7934ae2a92eac1, type: 2}
 --- !u!212 &212284537966084912
 SpriteRenderer:
