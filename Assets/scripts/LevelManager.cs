@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour {
         tutorial = true;
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[1];
         startOfLevel = Time.time;
-        level = 1;
+        level = 2;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         if (level == 1) StartCoroutine(Tutorial());
         instructions.text = "";
