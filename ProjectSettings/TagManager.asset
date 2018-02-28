@@ -15,6 +15,7 @@ TagManager:
   - Enemy1
   - Enemy2
   - EnemyProjectile
+  - Rock
   layers:
   - Default
   - TransparentFX

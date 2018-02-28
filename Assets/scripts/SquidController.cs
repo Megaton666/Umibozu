@@ -7,6 +7,7 @@ public class SquidController : MonoBehaviour {
     public int Health;
     public float Speed;
     public AudioClip onDeathSound;
+    public AudioClip shootSound;
     public Object inkBall;
 
     private GameObject player;
@@ -78,6 +79,7 @@ public class SquidController : MonoBehaviour {
             Instantiate(inkBall, transform.position, rot);
             rot = Quaternion.FromToRotation(Vector2.up, Vector2.left);
             Instantiate(inkBall, transform.position, rot);
+            audiosource.PlayOneShot(shootSound, 0.5f);
         }
         yield return new WaitForSeconds(1);
         InCooldown = false;
