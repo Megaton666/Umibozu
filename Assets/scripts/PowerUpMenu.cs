@@ -83,18 +83,18 @@ public class PowerUpMenu : MonoBehaviour {
         {;
             DestroyObject(other);
             audiosource.PlayOneShot(PowerupSound, 1.5f);
-            int randNum = Random.Range(0, 4);
-            if (!inventory[randNum])
+            int charge = other.gameObject.GetComponent<BoxController>().charge;
+            if (!inventory[charge])
             {
-                inventory[randNum] = true;
-                if (randNum == 0) BatteryUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
-                else if (randNum == 1) RepairUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
-                else if (randNum == 2) FlashlightUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                inventory[charge] = true;
+                if (charge == 0) BatteryUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                else if (charge == 1) RepairUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                else if (charge == 2) FlashlightUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
                 else SirenUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
             }
             else
             {
-                if (randNum == 0)
+                if (charge == 0)
                 {
                     ChargeBattery();
                 }

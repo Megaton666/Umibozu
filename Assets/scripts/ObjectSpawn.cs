@@ -58,18 +58,23 @@ public class ObjectSpawn : MonoBehaviour {
         Instantiate(longShadow, pos, rot).transform.parent = Instantiate(shark, pos, rot).transform;
     }
 
-    public void SpawnCrate(float x)
+    public void SpawnCrate(float x, int crateCharge)
     {
         Mathf.Clamp(x, -8.0f, 8.0f);
+        Mathf.Clamp(crateCharge, 0, 3);
         Vector3 pos = new Vector3(x , 7);
         Quaternion rot = Quaternion.FromToRotation(Vector2.zero, Vector2.zero);
         if (Random.Range(0, 2) == 0)
         {
-            Instantiate(longShadow, pos, rot).transform.parent = Instantiate(longCrate, pos, rot).transform;
+            GameObject crate = Instantiate(longCrate, pos, rot);
+            Instantiate(longShadow, pos, rot).transform.parent = crate.transform;
+            crate.GetComponent<BoxController>().charge = crateCharge;
         }
         else
         {
-            Instantiate(roundShadow, pos, rot).transform.parent = Instantiate(roundCrate, pos, rot).transform;
+            GameObject crate = Instantiate(roundCrate, pos, rot);
+            Instantiate(roundShadow, pos, rot).transform.parent = crate.transform;
+            crate.GetComponent<BoxController>().charge = crateCharge;
         }
     }
 
@@ -79,11 +84,15 @@ public class ObjectSpawn : MonoBehaviour {
         Quaternion rot = Quaternion.FromToRotation(Vector2.zero, Vector2.zero);
         if (Random.Range(0, 2) == 0)
         {
-            Instantiate(longShadow, pos, rot).transform.parent = Instantiate(longCrate, pos, rot).transform;
+            GameObject crate = Instantiate(longCrate, pos, rot);
+            Instantiate(longShadow, pos, rot).transform.parent = crate.transform;
+            crate.GetComponent<BoxController>().charge = Random.Range(0, 3);
         }
         else
         {
-            Instantiate(roundShadow, pos, rot).transform.parent = Instantiate(roundCrate, pos, rot).transform;
+            GameObject crate = Instantiate(roundCrate, pos, rot);
+            Instantiate(roundShadow, pos, rot).transform.parent = crate.transform;
+            crate.GetComponent<BoxController>().charge = Random.Range(0, 3);
         }
     }
 
