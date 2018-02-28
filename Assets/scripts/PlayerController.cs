@@ -52,14 +52,23 @@ public class PlayerController : MonoBehaviour {
         renderer = GetComponent<SpriteRenderer>();
     }
 
-
+    void Update()
+    {
+        if (Time.timeScale > 0)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
+            ChargeHarpoon();
+        }
+    }
     void FixedUpdate () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
      
         rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
         LimitSpeed();
-        ChargeHarpoon();
+        
         TurnSideways(moveHorizontal);
         HealthbarFill();
         Boundaries(8.4f, 3.7f);
