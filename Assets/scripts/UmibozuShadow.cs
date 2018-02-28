@@ -5,12 +5,15 @@ using UnityEngine;
 public class UmibozuShadow : MonoBehaviour {
 
     public float speed;
+    public float opacity;
 
     private new SpriteRenderer renderer;
     private bool rising;
     private float startTime;
 
     void Start () {
+        Mathf.Clamp(opacity, 0, 1);
+        transform.localScale *= opacity;
         renderer = GetComponent<SpriteRenderer>();
         Color temp = renderer.color;
         temp.a = 0f;
@@ -25,12 +28,12 @@ public class UmibozuShadow : MonoBehaviour {
         if (rising)
         {
             float t = (Time.time - startTime) / 1.5f;
-            renderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(0, 1f, t));
+            renderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(0, 1f * opacity, t));
         }
         else
         {
             float t = (Time.time - startTime) / 2f;
-            renderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(1f, 0, t));
+            renderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(1f * opacity, 0, t));
         }
         
         Vector3 Position = transform.position;
