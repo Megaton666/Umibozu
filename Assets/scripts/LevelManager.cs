@@ -7,7 +7,10 @@ public class LevelManager : MonoBehaviour {
 
     public Text instructions;
     public Light aura;
-    public Object shadow;
+    public Object shadow1;
+    public Object shadow2;
+    public Object shadow3;
+    public Object shadow4;
     public AudioClip growl;
     public float level1Time;
     public float level2Time;
@@ -26,11 +29,10 @@ public class LevelManager : MonoBehaviour {
         tutorial = true;
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[1];
         startOfLevel = Time.time;
-        level = 2;
+        level = 1;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         if (level == 1) StartCoroutine(Tutorial());
         instructions.text = "";
-
     }
 
 
@@ -139,7 +141,38 @@ public class LevelManager : MonoBehaviour {
         }
         else if (level == 4)
         {
+            if (Time.time >= timestamp)
+            {
+                int randNum = Random.Range(0, 100);
+                if (randNum < 40)
+                {
+                    spawner.SpawnSharkRandom(15);
+                }
+                else if (randNum >= 40 && randNum < 80)
+                {
+                    spawner.SpawnSquidRandom();
+                }
+                else if (randNum >= 80 && randNum < 85)
+                {
+                    spawner.SpawnCrateRandom();
+                }
+                else
+                {
+                    spawner.SpawnCliffsRandom(Random.Range(1, 3));
+                }
+                timestamp = Time.time + cooldown;
+                cooldown = Random.Range(0.5f, 1.5f);
+            }
 
+            if (aura.cookieSize > 4)
+            {
+                aura.cookieSize -= 0.01f;
+            }
+            if (Time.time - startOfLevel >= level3Time)
+            {
+                StartCoroutine(FinalScene());
+                level = 0;
+            }
         }
     }
 
@@ -193,9 +226,9 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(5f);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(10, -7, 0));
-        Instantiate(shadow, new Vector3(10, -7, 0), rot);
+        Instantiate(shadow1, new Vector3(10, -7, 0), rot);
         yield return new WaitForSeconds(3f);
-        audiosource.PlayOneShot(growl, 2.0f);
+        audiosource.PlayOneShot(growl, 1.0f);
         yield return new WaitForSeconds(7f);
         instructions.text = "Level 2";
         yield return new WaitForSeconds(3f);
@@ -207,9 +240,9 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(5f);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, new Vector3(0, 0) - new Vector3(-10, 1, 0));
-        Instantiate(shadow, new Vector3(-10, 1, 0), rot);
+        Instantiate(shadow2, new Vector3(-10, 1, 0), rot);
         yield return new WaitForSeconds(3f);
-        audiosource.PlayOneShot(growl, 3.0f);
+        audiosource.PlayOneShot(growl, 2.0f);
         yield return new WaitForSeconds(7f);
         instructions.text = "Level 3";
         yield return new WaitForSeconds(3f);
@@ -219,6 +252,13 @@ public class LevelManager : MonoBehaviour {
     }
 
     IEnumerator ThirdScene()
+    {
+        yield return new WaitForSeconds(1);
+        level = 4;
+        startOfLevel = Time.time;
+    }
+
+    IEnumerator FinalScene()
     {
         yield return new WaitForSeconds(1);
     }
