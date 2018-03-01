@@ -104,6 +104,7 @@ MonoBehaviour:
   pickupDestroySound: {fileID: 8300000, guid: 102cc2eec07b48d44a4210ecf25bdfc9, type: 3}
   harpoonFire: {fileID: 8300000, guid: 1e670e2abdcaa95499ef2016b0b184fe, type: 3}
   harpoonHold: {fileID: 8300000, guid: 5780c61542a7abd40b09a282aa344bbf, type: 3}
+  cliffHit: {fileID: 8300000, guid: bf9760f1edc4c4b449f2bc874e9fc716, type: 3}
 --- !u!212 &212102186649714830
 SpriteRenderer:
   m_ObjectHideFlags: 1

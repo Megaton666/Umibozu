@@ -9,6 +9,7 @@ public class ProjectileMove : MonoBehaviour
     public AudioClip pickupDestroySound;
     public AudioClip harpoonFire;
     public AudioClip harpoonHold;
+    public AudioClip cliffHit;
 
     private float speed;
     private float Distance;
@@ -62,6 +63,11 @@ public class ProjectileMove : MonoBehaviour
             {
                 audiosource.PlayOneShot(pickupDestroySound);
                 Destroy(other);
+                Destroy(gameObject);
+            }
+            else if (other.gameObject.CompareTag("Rock"))
+            {
+                audiosource.PlayOneShot(cliffHit);
                 Destroy(gameObject);
             }
         }
