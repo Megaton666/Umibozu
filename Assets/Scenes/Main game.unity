@@ -3145,7 +3145,7 @@ MonoBehaviour:
   level3Time: 60
   level4Time: 60
   level: 2
-  tutorial: 1
+  tutorial: 0
 --- !u!1 &1503604551
 GameObject:
   m_ObjectHideFlags: 0
