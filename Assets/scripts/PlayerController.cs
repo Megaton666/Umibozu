@@ -70,7 +70,20 @@ public class PlayerController : MonoBehaviour {
         Boundaries(8.4f, 3.7f);
         CheckAlive();
     }
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Glowing Rock"))
+        {
+            MaxSpeed *= 0.5f;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Glowing Rock"))
+        {
+            MaxSpeed = MaxSpeedInit;
+        }
+    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (!IsInvincible)

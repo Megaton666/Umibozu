@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour {
     public bool tutorial;
 
 
+    private new RemoteZoom camera;
     private AudioSource audiosource;
     private ObjectSpawn spawner;
     private float startOfLevel;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour {
     void Start ()
     {
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[1];
+        camera = GameObject.Find("Main Camera").GetComponent<RemoteZoom>();
         startOfLevel = Time.time;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         if (level == 1 && tutorial) StartCoroutine(Tutorial());
@@ -108,21 +110,25 @@ public class LevelManager : MonoBehaviour {
             if (Time.time >= timestamp)
             {
                 int randNum = Random.Range(0, 100);
-                if (randNum < 40)
+                if (randNum < 35)
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 40 && randNum < 80)
+                else if (randNum >= 35 && randNum < 70)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 80 && randNum < 90)
+                else if (randNum >= 70 && randNum < 80)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else
+                else if (randNum >= 80 && randNum < 90)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
+                }
+                else
+                {
+                    spawner.SpawnGlowingCliffsRandom(Random.Range(1, 3));
                 }
                 timestamp = Time.time + cooldown;
                 cooldown = Random.Range(0.5f, 2.0f);
@@ -155,9 +161,13 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else
+                else if (randNum >= 85 && randNum < 95)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
+                }
+                else
+                {
+                    spawner.SpawnGlowingCliffsRandom(Random.Range(1, 3));
                 }
                 timestamp = Time.time + cooldown;
                 cooldown = Random.Range(0.5f, 1.5f);
@@ -223,6 +233,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FirstScene()
     {
+        camera.Zoom(5.4f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(10, -7, 0);
         Vector3 dest = new Vector3(0, 0, 0);
@@ -239,6 +250,7 @@ public class LevelManager : MonoBehaviour {
     }
     IEnumerator SecondScene()
     {
+        camera.Zoom(5.8f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(-10, 1, 0);
         Vector3 dest = new Vector3(0, 0, 0);
@@ -256,6 +268,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator ThirdScene()
     {
+        camera.Zoom(6.2f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(0, -6, 0);
         Vector3 dest = new Vector3(0, 6, 0);
@@ -273,6 +286,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FinalScene()
     {
+        camera.Zoom(6.6f);
         yield return new WaitForSeconds(1);
     }
 }
