@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour {
     public bool tutorial;
 
 
+    private new RemoteZoom camera;
     private AudioSource audiosource;
     private ObjectSpawn spawner;
     private float startOfLevel;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour {
     void Start ()
     {
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[1];
+        camera = GameObject.Find("Main Camera").GetComponent<RemoteZoom>();
         startOfLevel = Time.time;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         if (level == 1 && tutorial) StartCoroutine(Tutorial());
@@ -223,6 +225,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FirstScene()
     {
+        camera.Zoom(5.4f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(10, -7, 0);
         Vector3 dest = new Vector3(0, 0, 0);
@@ -239,6 +242,7 @@ public class LevelManager : MonoBehaviour {
     }
     IEnumerator SecondScene()
     {
+        camera.Zoom(5.8f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(-10, 1, 0);
         Vector3 dest = new Vector3(0, 0, 0);
@@ -256,6 +260,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator ThirdScene()
     {
+        camera.Zoom(6.2f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(0, -6, 0);
         Vector3 dest = new Vector3(0, 6, 0);
@@ -273,6 +278,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FinalScene()
     {
+        camera.Zoom(6.6f);
         yield return new WaitForSeconds(1);
     }
 }

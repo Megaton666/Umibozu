@@ -11,7 +11,10 @@ public class SettingsButton : MonoBehaviour {
         Button btn = GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
+    void Update()
+    {
 
+    }
     void TaskOnClick()
     {
         settingsMenu.SetActive(true);

@@ -13,8 +13,15 @@ public class SettingsMenuBack : MonoBehaviour {
         Button btn = GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
-	
 
+    void Update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            originMenu.SetActive(true);
+            transform.parent.gameObject.SetActive(false);
+        }
+    }
 	void TaskOnClick ()
     {
         originMenu.SetActive(true);
