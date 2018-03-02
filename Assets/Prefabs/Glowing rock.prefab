@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4614681309491888}
   - component: {fileID: 212037055799455472}
   - component: {fileID: 108505575695153688}
-  - component: {fileID: 114339447220915356}
   - component: {fileID: 114471027858381978}
   - component: {fileID: 58325445464982136}
+  - component: {fileID: 95192920714060326}
   m_Layer: 0
   m_Name: Glowing rock
   m_TagString: Glowing Rock
@@ -59,6 +59,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.83812237
+--- !u!95 &95192920714060326
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675260556594664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b2d31677cc78074785ab4a4fed4fdaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &108505575695153688
 Light:
   m_ObjectHideFlags: 1
@@ -95,17 +112,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114339447220915356
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1675260556594664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114471027858381978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,8 +158,8 @@ SpriteRenderer:
   m_SortingLayerID: -1432222225
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1447cfa139e4f59468be0f62fc470dd4, type: 3}
-  m_Color: {r: 0.5955882, g: 0.7155172, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ce1d9d25a7e2d6d4b914ad9fdc794cd2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

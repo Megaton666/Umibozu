@@ -27,7 +27,7 @@ public class CursorController : MonoBehaviour {
             Cursor.SetCursor(CursorTrans, hotspot, CursorMode.Auto);
             InRange = false;
         }
-        else if (distance <= range && InRange == false)
+        else if (distance <= range/* && InRange == false*/)
         {
             Cursor.SetCursor(CursorOpaque, hotspot, CursorMode.Auto);
             InRange = true;
