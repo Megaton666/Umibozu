@@ -9,6 +9,7 @@ public class ProjectileMove : MonoBehaviour
     public AudioClip pickupDestroySound;
     public AudioClip harpoonFire;
     public AudioClip harpoonHold;
+    public AudioClip cliffHit;
 
     private float speed;
     private float Distance;
@@ -16,8 +17,9 @@ public class ProjectileMove : MonoBehaviour
     
     void Start()
     {
-        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
+        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[2];
         audiosource.clip = harpoonHold;
+        audiosource.volume = 1f;
         audiosource.Play();
         Distance = 0;
         speed = 0.0f;
@@ -25,7 +27,7 @@ public class ProjectileMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!Input.GetMouseButton(0) && Distance == 0)
+        if (!Input.GetButton("Fire1") && Distance == 0)
         {
             audiosource.Stop();
             transform.parent = null;
@@ -43,20 +45,32 @@ public class ProjectileMove : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (speed != 0)
         {
-            Destroy(gameObject);
+            if (other.gameObject.CompareTag("Enemy1"))
+            {
+                other.GetComponent<SharkController>().Health--;
+                Destroy(gameObject);
+            }
+            else if (other.gameObject.CompareTag("Enemy2"))
+            {
+                other.GetComponent<SquidController>().Health--;
+                Destroy(gameObject);
+            }
+            else if (other.gameObject.CompareTag("PowerUp"))
+            {
+                audiosource.PlayOneShot(pickupDestroySound);
+                Destroy(other);
+                Destroy(gameObject);
+            }
+            else if (other.gameObject.CompareTag("Rock"))
+            {
+                audiosource.PlayOneShot(cliffHit);
+                Destroy(gameObject);
+            }
         }
 
-        else if (other.gameObject.CompareTag("PowerUp"))
-        {
-            audiosource.PlayOneShot(pickupDestroySound);
-            Destroy(other);
-            Destroy(gameObject);
-        }
     }
-
-
 }

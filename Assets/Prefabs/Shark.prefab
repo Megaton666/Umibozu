@@ -20,12 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4275804618990398}
   - component: {fileID: 212931319473515936}
-  - component: {fileID: 114503097445285790}
+  - component: {fileID: 114207171367829446}
+  - component: {fileID: 114485712017297856}
   - component: {fileID: 50965854730040964}
   - component: {fileID: 60077399423738354}
+  - component: {fileID: 95872425479567874}
   m_Layer: 8
   m_Name: Shark
-  m_TagString: Enemy
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +194,24 @@ PolygonCollider2D:
       - {x: -0.041449547, y: -2.5364633}
       - {x: -0.025158882, y: -2.5411065}
       - {x: -0.023612022, y: -2.5635877}
---- !u!114 &114503097445285790
+--- !u!95 &95872425479567874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234687953787206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f9331b6771d693428ccb44fbd26af53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114207171367829446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -200,12 +219,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1234687953787206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39bc695e10b1f4a4d9a2fcf8568571a5, type: 3}
+  m_Script: {fileID: 11500000, guid: a126692eef1828145b9efc5f70d2a753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
   Speed: 0.05
   onDeathSound: {fileID: 8300000, guid: f4a6bc102a674284790a6ddc7204ebe2, type: 3}
+--- !u!114 &114485712017297856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234687953787206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b35840634bc5fa46877e0fac6efeba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212931319473515936
 SpriteRenderer:
   m_ObjectHideFlags: 1

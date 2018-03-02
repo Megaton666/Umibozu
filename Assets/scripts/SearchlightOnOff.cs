@@ -24,13 +24,15 @@ public class SearchlightOnOff : MonoBehaviour {
         Light.SetActive(false);
     }
 	
-	
-    void FixedUpdate()
+	void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && Time.timeScale > 0)
         {
             TurnOnOff();
         }
+    }
+    void FixedUpdate()
+    {
         batteryBar.value = battery;
         if (IsOn)
         {
@@ -39,6 +41,10 @@ public class SearchlightOnOff : MonoBehaviour {
             {
                 TurnOnOff();
             }
+        }
+        else if (battery < 25)
+        {
+            battery += 0.01f;
         }
     }
 

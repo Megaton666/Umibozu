@@ -1,18 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUpMenu : MonoBehaviour {
 
     public AudioClip batteryReload;
     public AudioClip PowerupSound;
+    public AudioClip RepairSound;
+    public AudioClip LightSound;
+    public AudioClip airhorn;
+    public Texture searchlightStandard;
+    public Texture searchlightWide;
+    public Image BatteryUI;
+    public Image RepairUI;
+    public Image FlashlightUI;
+    public Image SirenUI;
 
+    private GameObject siren;
+    private GameObject Searchlight;
+    private GameObject lightMask;
+    private GameObject directionalLight;
     private AudioSource audiosource;
     private bool[] inventory;
     void Start()
     {
         inventory = new bool[] { false, false, false, false };
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
+        Searchlight = GameObject.Find("Searchlight");
+        lightMask = GameObject.Find("LightMask");
+        directionalLight = GameObject.Find("Directional light");
+        siren = GameObject.FindGameObjectWithTag("Siren");
+        siren.SetActive(false);
+        
     }
 
     void Update()
@@ -21,6 +41,7 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[0])
             {
+                BatteryUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
                 ChargeBattery();
                 inventory[0] = false;
             }
@@ -29,7 +50,8 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[1])
             {
-                
+                audiosource.PlayOneShot(RepairSound, 1.5f);
+                RepairUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
                 StartCoroutine(RepairKit());
                 inventory[1] = false;
             }
@@ -38,7 +60,9 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[2])
             {
-
+                audiosource.PlayOneShot(LightSound, 1.5f);
+                FlashlightUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
+                StartCoroutine(SearchlightAngle());
                 inventory[2] = false;
             }
         }
@@ -46,7 +70,9 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[3])
             {
-
+                audiosource.PlayOneShot(airhorn, 2.0f);
+                SirenUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
+                StartCoroutine(ActivateSiren());
                 inventory[3] = false;
             }
         }
@@ -57,24 +83,39 @@ public class PowerUpMenu : MonoBehaviour {
         if (other.gameObject.CompareTag("PowerUp"))
         {;
             DestroyObject(other);
-            audiosource.PlayOneShot(PowerupSound, 1.5f);
-            int randNum = Random.Range(0, 2);
-            if (!inventory[randNum])
+            audiosource.PlayOneShot(PowerupSound, 2.5f);
+            int charge = other.gameObject.GetComponent<BoxController>().charge;
+            if (!inventory[charge])
             {
-                inventory[randNum] = true;
+                inventory[charge] = true;
+                if (charge == 0) BatteryUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                else if (charge == 1) RepairUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                else if (charge == 2) FlashlightUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
+                else SirenUI.GetComponent<PowerupSwitch>().SwitchOnOff(true);
             }
             else
             {
-                if (randNum == 0)
+                if (charge == 0)
                 {
                     ChargeBattery();
                 }
             }
         }
     }
-    IEnumerator PowerUpTime(float time)
+    IEnumerator ActivateSiren()
     {
-        yield return new WaitForSeconds(time);
+        siren.SetActive(true);
+        yield return new WaitForSeconds(5);
+        siren.SetActive(false);
+    }
+
+    IEnumerator SearchlightAngle()
+    {
+        lightMask.transform.localScale = ScaleObjectX(lightMask.transform.localScale, 1.5f);
+        directionalLight.GetComponent<Light>().cookie = searchlightWide;
+        yield return new WaitForSeconds(5);
+        lightMask.transform.localScale = ScaleObjectX(lightMask.transform.localScale, 1/1.5f);
+        directionalLight.GetComponent<Light>().cookie = searchlightStandard;
     }
 
     IEnumerator RepairKit()
@@ -94,7 +135,12 @@ public class PowerUpMenu : MonoBehaviour {
 
     void ChargeBattery()
     {
-        GameObject.Find("Searchlight").GetComponent<SearchlightOnOff>().battery = 100;
+        Searchlight.GetComponent<SearchlightOnOff>().battery = 100;
         audiosource.PlayOneShot(batteryReload, 1.5f);
+    }
+
+    Vector3 ScaleObjectX(Vector3 input, float scale)
+    {
+        return new Vector3((input.x * scale), input.y, input.z);
     }
 }

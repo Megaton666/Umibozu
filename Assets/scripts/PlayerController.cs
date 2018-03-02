@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     public int MaxHealth;
+    public int sharkDamage;
+    public int squidDamage;
+    public int inkDamage;
+    public int rockDamage;
     public float MaxSpeedInit;
     public float AccelInit;
     public Slider Healthbar;
@@ -14,23 +18,25 @@ public class PlayerController : MonoBehaviour {
     public AudioClip HarpoonLoad;
     public AudioClip GameoverSound;
     public AudioClip batteryReload;
-    public AudioClip cooldownSound;
     public GameObject projectile;
     public GameObject GameOverScreen;
     public GameObject gameOverMenu;
 
 
+    private new SpriteRenderer renderer;
+    private bool harpoonPrimed = false;
+    private float startTime = 0.0f;
+    private float harpoonChargeTime = 0.6f;
     private float rotationZ = 0f;
     private bool IsInvincible = false;
     private float Accel;
-    private float timestamp;
-    private float cooldown;
     private Rigidbody2D rb;
     private AudioSource audiosource;
     private Transform harpoon;
 
     [HideInInspector]
     public int Health;
+    [HideInInspector]
     public float MaxSpeed;
 
     void Start ()
@@ -41,66 +47,82 @@ public class PlayerController : MonoBehaviour {
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
         Accel = AccelInit;
-        cooldown = 1.5f;
         Health = MaxHealth;
         Healthbar.maxValue = Health;
+        renderer = GetComponent<SpriteRenderer>();
     }
 
-
-    void FixedUpdate () {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-     
-        rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
-        LimitSpeed();
-        if (Input.GetButtonDown("Fire1"))
+    void Update()
+    {
+        if (Time.timeScale > 0)
         {
-            if (Time.time >= timestamp)
-            {
-                StartCoroutine(FireHarpoon());
-                timestamp = Time.time + cooldown;
-            }
-            else
-            {
-                audiosource.PlayOneShot(cooldownSound);
-            }
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            TurnSideways(moveHorizontal);
+            rb.velocity += new Vector2(moveHorizontal * Accel, moveVertical * Accel);
+            ChargeHarpoon();
         }
-        TurnSideways(moveHorizontal);
+    }
+    void FixedUpdate () {
+        LimitSpeed();
+        
         HealthbarFill();
         Boundaries(8.4f, 3.7f);
         CheckAlive();
     }
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Glowing Rock"))
+        {
+            MaxSpeed *= 0.5f;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Glowing Rock"))
+        {
+            MaxSpeed = MaxSpeedInit;
+        }
+    }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && !IsInvincible )
+        if (!IsInvincible)
         {
-            TakeDamage(1);
-            audiosource.PlayOneShot(EnemycollideSound, 2f);
-            StartCoroutine(InvulnTimer());
+            if (other.gameObject.CompareTag("Enemy1"))
+            {
+                TakeDamage(sharkDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("Enemy2"))
+            {
+                TakeDamage(squidDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("EnemyProjectile"))
+            {
+                TakeDamage(inkDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
+            else if (other.gameObject.CompareTag("Rock"))
+            {
+                TakeDamage(rockDamage);
+                audiosource.PlayOneShot(EnemycollideSound, 2f);
+                StartCoroutine(InvulnTimer());
+            }
         }
-        //else if (other.gameObject.CompareTag("PowerUp"))
-        //{
-        //    other.gameObject.SetActive(false);
-        //    int randNum = Random.Range(0, 2);
-        //    if (randNum == 1)
-        //    {
-        //        audiosource.PlayOneShot(PowerupSound, 1.5f);
-        //        StartCoroutine(PowerUpTime(5));
-        //    }
-        //    else
-        //    {
-        //        GameObject.Find("Searchlight").GetComponent<SearchlightOnOff>().battery = 100;
-        //        audiosource.PlayOneShot(batteryReload, 1.5f);
-        //    }
-        //}
-        
     }
 
     void CheckAlive()
     {
         if (Healthbar.value <= 0)
         {
+            GetComponent<AudioSource>().Stop();
+            GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
+            GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
+            audiosource.Stop();
             audiosource.PlayOneShot(GameoverSound, 2.0f);
             GameOverScreen.SetActive(true);
             gameOverMenu.SetActive(true);
@@ -136,35 +158,63 @@ public class PlayerController : MonoBehaviour {
             Healthbar.value = Health;
         }
     }
-    IEnumerator FireHarpoon()
+
+    void ChargeHarpoon()
     {
-        audiosource.PlayOneShot(HarpoonLoad);
-        yield return new WaitForSeconds(0.8f);
-        Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
+        if (Input.GetButtonDown("Fire1"))
+        {
+            startTime = Time.time;
+            audiosource.clip = HarpoonLoad;
+            audiosource.volume = 1;
+            audiosource.Play();
+        }
+
+        if (Input.GetButton("Fire1"))
+        {
+            if (startTime + harpoonChargeTime <= Time.time)
+                {
+                if (!harpoonPrimed)
+                {
+                    Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
+                    harpoonPrimed = true;
+                    audiosource.Stop();
+                }
+            }
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            audiosource.Stop();
+            audiosource.volume = 1;
+            if (harpoonPrimed)
+            {
+                harpoonPrimed = false;
+            }
+        }
+
     }
     IEnumerator InvulnTimer()
     {
         IsInvincible = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
         yield return new WaitForSeconds(0.25f);
-        GetComponent<SpriteRenderer>().color = Color.red;
+        renderer.color = Color.red;
         yield return new WaitForSeconds(0.25f);
         IsInvincible = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        renderer.color = Color.white;
     }
     
     void LimitSpeed()

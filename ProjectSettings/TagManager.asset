@@ -5,13 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - PowerUp
-  - Enemy
   - Projectile
   - Spawn
   - Background
   - SFX Manager
   - Screen
   - Light
+  - Siren
+  - Enemy1
+  - Enemy2
+  - EnemyProjectile
+  - Rock
+  - Glowing Rock
   layers:
   - Default
   - TransparentFX
