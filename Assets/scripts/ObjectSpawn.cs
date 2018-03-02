@@ -11,6 +11,7 @@ public class ObjectSpawn : MonoBehaviour {
     public GameObject roundCrate;
     public GameObject squid;
     public GameObject cliff;
+    public GameObject glowingCliff;
 
     private Vector3 center = new Vector3(0, 1, 0);
 
@@ -135,4 +136,27 @@ public class ObjectSpawn : MonoBehaviour {
         }
     }
 
+    public void SpawnGlowingCliffs(float x, int amount)
+    {
+        Mathf.Clamp(x, -8.0f, 8.0f);
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 pos = new Vector3(x, 7);
+            Quaternion rot = Quaternion.FromToRotation(Vector2.zero, Vector2.zero);
+            Instantiate(glowingCliff, pos, rot);
+            x += cliff.GetComponent<BoxCollider2D>().size.x;
+        }
+    }
+
+    public void SpawnGlowingCliffsRandom(int amount)
+    {
+        float x = Random.Range(-8.0f, 8.0f);
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 pos = new Vector3(x, 7);
+            Quaternion rot = Quaternion.FromToRotation(Vector2.zero, Vector2.zero);
+            Instantiate(glowingCliff, pos, rot);
+            x += cliff.GetComponent<BoxCollider2D>().size.x;
+        }
+    }
 }

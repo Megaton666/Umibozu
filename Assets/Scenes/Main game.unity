@@ -2667,6 +2667,8 @@ MonoBehaviour:
   roundCrate: {fileID: 1627594609276156, guid: a5b4eace2cfc1b446923438920516053, type: 2}
   squid: {fileID: 1858275288354014, guid: c2aa434e98a83924fbcb98bfa8ff8e5e, type: 2}
   cliff: {fileID: 1636689338204700, guid: 5da52f439b569fb478fc233fd2c02ca4, type: 2}
+  glowingCliff: {fileID: 1675260556594664, guid: 13c0e8650c820094f93381ff15e36be9,
+    type: 2}
 --- !u!4 &1298290302
 Transform:
   m_ObjectHideFlags: 0
