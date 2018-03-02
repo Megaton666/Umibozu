@@ -7,6 +7,8 @@ public class PowerUpMenu : MonoBehaviour {
 
     public AudioClip batteryReload;
     public AudioClip PowerupSound;
+    public AudioClip RepairSound;
+    public AudioClip LightSound;
     public AudioClip airhorn;
     public Texture searchlightStandard;
     public Texture searchlightWide;
@@ -39,7 +41,6 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[0])
             {
-                audiosource.PlayOneShot(PowerupSound);
                 BatteryUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
                 ChargeBattery();
                 inventory[0] = false;
@@ -49,7 +50,7 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[1])
             {
-                audiosource.PlayOneShot(PowerupSound);
+                audiosource.PlayOneShot(RepairSound, 1.5f);
                 RepairUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
                 StartCoroutine(RepairKit());
                 inventory[1] = false;
@@ -59,7 +60,7 @@ public class PowerUpMenu : MonoBehaviour {
         {
             if (inventory[2])
             {
-                audiosource.PlayOneShot(PowerupSound);
+                audiosource.PlayOneShot(LightSound, 1.5f);
                 FlashlightUI.GetComponent<PowerupSwitch>().SwitchOnOff(false);
                 StartCoroutine(SearchlightAngle());
                 inventory[2] = false;
@@ -82,7 +83,7 @@ public class PowerUpMenu : MonoBehaviour {
         if (other.gameObject.CompareTag("PowerUp"))
         {;
             DestroyObject(other);
-            audiosource.PlayOneShot(PowerupSound, 1.5f);
+            audiosource.PlayOneShot(PowerupSound, 2.5f);
             int charge = other.gameObject.GetComponent<BoxController>().charge;
             if (!inventory[charge])
             {
