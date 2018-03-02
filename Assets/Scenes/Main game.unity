@@ -427,7 +427,7 @@ MonoBehaviour:
   MaxSpeedInit: 0.75
   AccelInit: 0.15
   Healthbar: {fileID: 479951628}
-  PowerupSound: {fileID: 8300000, guid: 07b29bb505c154e7797ce389a8e0fc6c, type: 3}
+  PowerupSound: {fileID: 8300000, guid: 7bba97397063e4b43a282d1cf997d489, type: 3}
   EnemycollideSound: {fileID: 8300000, guid: b173e40a7e683cd4aa773ba496c9f34a, type: 3}
   HarpoonLoad: {fileID: 8300000, guid: ccbad98d3259f79499c2acfeedcf3b92, type: 3}
   GameoverSound: {fileID: 8300000, guid: 0c7fb5aa0ebb5d945a57a0ccda64105a, type: 3}
@@ -528,9 +528,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3009fb25db5e6c3409a4a6e183db62c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batteryReload: {fileID: 8300000, guid: 66582ed6d85f2414682795e659f604a5, type: 3}
-  PowerupSound: {fileID: 8300000, guid: 07b29bb505c154e7797ce389a8e0fc6c, type: 3}
-  airhorn: {fileID: 8300000, guid: b38e67e4c1c42c94ba08f0134ac9a76e, type: 3}
+  batteryReload: {fileID: 8300000, guid: c4d8c737a0d5c405cba0517e4120ba89, type: 3}
+  PowerupSound: {fileID: 8300000, guid: 7bba97397063e4b43a282d1cf997d489, type: 3}
+  RepairSound: {fileID: 8300000, guid: 128c2e612bc6e40c499e0730e73b1290, type: 3}
+  LightSound: {fileID: 8300000, guid: 96c72494a67f64492aa4f38c328e8745, type: 3}
+  airhorn: {fileID: 8300000, guid: e5f491bdef2234f87ad9f43852c8177c, type: 3}
   searchlightStandard: {fileID: 2800000, guid: 16671554d95057947a0fc3436a869635, type: 3}
   searchlightWide: {fileID: 2800000, guid: fef733e5f563da54f938d7209f86d9b6, type: 3}
   BatteryUI: {fileID: 1336803509}
@@ -2176,9 +2178,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22806b45b27ef4d06b1df584a7171b50, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3a0f9033df0f44d84a461395cf68cc44, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.51
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3142,7 +3144,7 @@ MonoBehaviour:
   level2Time: 60
   level3Time: 60
   level4Time: 60
-  level: 1
+  level: 2
   tutorial: 1
 --- !u!1 &1503604551
 GameObject:
