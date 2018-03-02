@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d58c86d5a99d18418a6239e0bb9a126
+guid: c2b6f2d5ee2176a4492726da95dd7ab7
 timeCreated: 1519825731
 licenseType: Free
 TrueTypeFontImporter:
@@ -13,7 +13,8 @@ TrueTypeFontImporter:
   fontName: Korean Calligraphy
   fontNames:
   - Korean Calligraphy
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7d58c86d5a99d18418a6239e0bb9a126, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
