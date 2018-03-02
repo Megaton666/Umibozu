@@ -1643,6 +1643,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610720970}
+--- !u!1 &623183098 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1480808455348764, guid: b6b89a76f64c1a94e9b5df2c66d79715,
+    type: 2}
+  m_PrefabInternal: {fileID: 1761964180}
+--- !u!224 &623183099 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224663097190772914, guid: b6b89a76f64c1a94e9b5df2c66d79715,
+    type: 2}
+  m_PrefabInternal: {fileID: 1761964180}
 --- !u!1 &742868364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,16 +2337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acde1e493008c74cb795ca13e337c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &900708259 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1492295925349460, guid: b6b89a76f64c1a94e9b5df2c66d79715,
-    type: 2}
-  m_PrefabInternal: {fileID: 1761964180}
---- !u!224 &900708260 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224206021605853104, guid: b6b89a76f64c1a94e9b5df2c66d79715,
-    type: 2}
-  m_PrefabInternal: {fileID: 1761964180}
 --- !u!1 &1084160987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2512,7 @@ Prefab:
         type: 2}
       propertyPath: settingsMenu
       value: 
-      objectReference: {fileID: 900708259}
+      objectReference: {fileID: 623183098}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8860f316bafe5745942e60180122e63, type: 2}
   m_IsPrefabParent: 0
@@ -4010,6 +4010,11 @@ Prefab:
       propertyPath: originMenu
       value: 
       objectReference: {fileID: 1600014409}
+    - target: {fileID: 114255159726025768, guid: b6b89a76f64c1a94e9b5df2c66d79715,
+        type: 2}
+      propertyPath: originMenu
+      value: 
+      objectReference: {fileID: 1600014409}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6b89a76f64c1a94e9b5df2c66d79715, type: 2}
   m_IsPrefabParent: 0
@@ -4537,7 +4542,7 @@ RectTransform:
   m_Children:
   - {fileID: 1084160988}
   - {fileID: 1600014410}
-  - {fileID: 900708260}
+  - {fileID: 623183099}
   - {fileID: 1564218626}
   - {fileID: 1526460613}
   - {fileID: 1236858698}
