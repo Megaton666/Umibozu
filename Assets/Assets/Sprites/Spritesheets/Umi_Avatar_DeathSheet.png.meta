@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 9271494eb526d484180159bcc167e066
+timeCreated: 1520077175
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Umi_Avatar_DeathSheet_0
+    21300002: Umi_Avatar_DeathSheet_1
+    21300004: Umi_Avatar_DeathSheet_2
+    21300006: Umi_Avatar_DeathSheet_3
+    21300008: Umi_Avatar_DeathSheet_4
+    21300010: Umi_Avatar_DeathSheet_5
+    21300012: Umi_Avatar_DeathSheet_6
+    21300014: Umi_Avatar_DeathSheet_7
+    21300016: Umi_Avatar_DeathSheet_8
+    21300018: Umi_Avatar_DeathSheet_9
+    21300020: Umi_Avatar_DeathSheet_10
+    21300022: Umi_Avatar_DeathSheet_11
+    21300024: Umi_Avatar_DeathSheet_12
+    21300026: Umi_Avatar_DeathSheet_13
+    21300028: Umi_Avatar_DeathSheet_14
+    21300030: Umi_Avatar_DeathSheet_15
+    21300032: Umi_Avatar_DeathSheet_16
+    21300034: Umi_Avatar_DeathSheet_17
+    21300036: Umi_Avatar_DeathSheet_18
+    21300038: Umi_Avatar_DeathSheet_19
+    21300040: Umi_Avatar_DeathSheet_20
+    21300042: Umi_Avatar_DeathSheet_21
+    21300044: Umi_Avatar_DeathSheet_22
+    21300046: Umi_Avatar_DeathSheet_23
+    21300048: Umi_Avatar_DeathSheet_24
+    21300050: Umi_Avatar_DeathSheet_25
+    21300052: Umi_Avatar_DeathSheet_26
+    21300054: Umi_Avatar_DeathSheet_27
+    21300056: Umi_Avatar_DeathSheet_28
+    21300058: Umi_Avatar_DeathSheet_29
+    21300060: Umi_Avatar_DeathSheet_30
+    21300062: Umi_Avatar_DeathSheet_31
+    21300064: Umi_Avatar_DeathSheet_32
+    21300066: Umi_Avatar_DeathSheet_33
+    21300068: Umi_Avatar_DeathSheet_34
+    21300070: Umi_Avatar_DeathSheet_35
+    21300072: Umi_Avatar_DeathSheet_36
+    21300074: Umi_Avatar_DeathSheet_38
+    21300076: Umi_Avatar_DeathSheet_39
+    21300078: Umi_Avatar_DeathSheet_40
+    21300080: Umi_Avatar_DeathSheet_41
+    21300082: Umi_Avatar_DeathSheet_42
+    21300084: Umi_Avatar_DeathSheet_43
+    21300086: Umi_Avatar_DeathSheet_45
+    21300088: Umi_Avatar_DeathSheet_46
+    21300090: Umi_Avatar_DeathSheet_47
+    21300092: Umi_Avatar_DeathSheet_48
+    21300094: Umi_Avatar_DeathSheet_49
+    21300096: Umi_Avatar_DeathSheet_51
+    21300098: Umi_Avatar_DeathSheet_52
+    21300100: Umi_Avatar_DeathSheet_53
+    21300102: Umi_Avatar_DeathSheet_55
+    21300104: Umi_Avatar_DeathSheet_56
+    21300106: Umi_Avatar_DeathSheet_57
+    21300108: Umi_Avatar_DeathSheet_58
+    21300110: Umi_Avatar_DeathSheet_59
+    21300112: Umi_Avatar_DeathSheet_61
+    21300114: Umi_Avatar_DeathSheet_62
+    21300116: Umi_Avatar_DeathSheet_63
+    21300118: Umi_Avatar_DeathSheet_64
+    21300120: Umi_Avatar_DeathSheet_65
+    21300122: Umi_Avatar_DeathSheet_66
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_0
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1882
+        width: 516
+        height: 1202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 1882
+        width: 517
+        height: 1202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 1881
+        width: 516
+        height: 1200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_3
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 1878
+        width: 624
+        height: 1203
+      alignment: 9
+      pivot: {x: 0.40789324, y: 0.5249267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_5
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 1820
+        width: 782
+        height: 1233
+      alignment: 9
+      pivot: {x: 0.3902822, y: 0.5112841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_10
+      rect:
+        serializedVersion: 2
+        x: 6175
+        y: 1799
+        width: 784
+        height: 1237
+      alignment: 9
+      pivot: {x: 0.42731586, y: 0.5342831}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_12
+      rect:
+        serializedVersion: 2
+        x: 7355
+        y: 1797
+        width: 824
+        height: 1257
+      alignment: 9
+      pivot: {x: 0.38846567, y: 0.5331647}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_53
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 129
+        width: 817
+        height: 1307
+      alignment: 9
+      pivot: {x: 0.41668305, y: 0.5443002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_55
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 195
+        width: 798
+        height: 1285
+      alignment: 9
+      pivot: {x: 0.3706726, y: 0.52390736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_65
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 270
+        width: 838
+        height: 1256
+      alignment: 9
+      pivot: {x: 0.43998685, y: 0.47997975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi_Avatar_DeathSheet_66
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 271
+        width: 846
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

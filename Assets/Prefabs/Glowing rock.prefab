@@ -85,11 +85,11 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.23313148, g: 0.5592231, b: 0.7205882, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 0.21604672, g: 0.72235715, b: 0.7941176, a: 1}
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
-  m_CookieSize: 4
+  m_CookieSize: 5
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
@@ -101,7 +101,7 @@ Light:
   m_Cookie: {fileID: 2800000, guid: 8433c3390d868cb4bbd1d061d3be58b2, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 132363829}
   - component: {fileID: 132363824}
   - component: {fileID: 132363828}
+  - component: {fileID: 132363830}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -233,9 +234,9 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0.01, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.39, y: 12.76}
+    oldSize: {x: 5.16, y: 12.02}
     newSize: {x: 5.12, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -381,7 +382,7 @@ SpriteRenderer:
   m_SortingLayerID: -415970105
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 082f37dc9420e2c4a8c4f235f8d05197, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9271494eb526d484180159bcc167e066, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -435,6 +436,7 @@ MonoBehaviour:
   projectile: {fileID: 1624420410135226, guid: 4819c9946e9e5304a83a8df9e7042fdd, type: 2}
   GameOverScreen: {fileID: 1084160987}
   gameOverMenu: {fileID: 1600014409}
+  deathAni: {fileID: 7400000, guid: 321af7225fa7a7241b72b6c59640faa4, type: 2}
   Health: 0
   MaxSpeed: 0
 --- !u!82 &132363828
@@ -539,6 +541,23 @@ MonoBehaviour:
   RepairUI: {fileID: 1509757729}
   FlashlightUI: {fileID: 882184519}
   SirenUI: {fileID: 610720973}
+--- !u!95 &132363830
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 132363822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e81dbbab96c175d4a99b17cc59f68423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &135548594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,8 +3181,8 @@ MonoBehaviour:
   level2Time: 60
   level3Time: 60
   level4Time: 60
-  level: 1
-  tutorial: 1
+  level: 3
+  tutorial: 0
 --- !u!1 &1503604551
 GameObject:
   m_ObjectHideFlags: 0

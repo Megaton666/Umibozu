@@ -21,8 +21,10 @@ public class PlayerController : MonoBehaviour {
     public GameObject projectile;
     public GameObject GameOverScreen;
     public GameObject gameOverMenu;
+    public AnimationClip deathAni;
 
 
+    private new Animator animation;
     private new SpriteRenderer renderer;
     private bool harpoonPrimed = false;
     private float startTime = 0.0f;
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour {
     {
         GameOverScreen.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
+        animation = GetComponent<Animator>();
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
@@ -119,14 +122,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (Healthbar.value <= 0)
         {
-            GetComponent<AudioSource>().Stop();
-            GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
-            GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
-            audiosource.Stop();
-            audiosource.PlayOneShot(GameoverSound, 2.0f);
-            GameOverScreen.SetActive(true);
-            gameOverMenu.SetActive(true);
-            Time.timeScale = 0;
+            StartCoroutine(Death());
+    
         }
     }
     void TurnSideways(float moveHorizontal)
@@ -191,6 +188,20 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
+    }
+
+    IEnumerator Death()
+    {
+        animation.Play(deathAni.name, 0);
+        yield return new WaitForSeconds(deathAni.length);
+        GetComponent<AudioSource>().Stop();
+        GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
+        GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
+        audiosource.Stop();
+        audiosource.PlayOneShot(GameoverSound, 2.0f);
+        GameOverScreen.SetActive(true);
+        gameOverMenu.SetActive(true);
+        Time.timeScale = 0;
     }
     IEnumerator InvulnTimer()
     {
