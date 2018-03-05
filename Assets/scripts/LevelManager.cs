@@ -233,12 +233,12 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FirstScene()
     {
-        camera.Zoom(5.4f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(10, -7, 0);
         Vector3 dest = new Vector3(0, 0, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
         Instantiate(shadow2, pointOfOrigin, rot);
+        camera.Zoom(5.4f);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 1.0f);
         yield return new WaitForSeconds(7f);
@@ -250,12 +250,12 @@ public class LevelManager : MonoBehaviour {
     }
     IEnumerator SecondScene()
     {
-        camera.Zoom(5.8f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(-10, 1, 0);
         Vector3 dest = new Vector3(0, 0, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
         Instantiate(shadow2, pointOfOrigin, rot);
+        camera.Zoom(5.8f);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 2.0f);
         yield return new WaitForSeconds(7f);
@@ -268,12 +268,12 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator ThirdScene()
     {
-        camera.Zoom(6.2f);
         yield return new WaitForSeconds(5f);
         Vector3 pointOfOrigin = new Vector3(0, -6, 0);
         Vector3 dest = new Vector3(0, 6, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
         Instantiate(shadow2, pointOfOrigin, rot);
+        camera.Zoom(6.2f);
         yield return new WaitForSeconds(2f);
         audiosource.PlayOneShot(growl, 3.0f);
         yield return new WaitForSeconds(7f);

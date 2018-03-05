@@ -197,6 +197,7 @@ public class PlayerController : MonoBehaviour {
         GetComponent<AudioSource>().Stop();
         GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
         GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
+        GameObject.Find("Main Camera").GetComponents<AudioSource>()[2].Stop();
         audiosource.Stop();
         audiosource.PlayOneShot(GameoverSound, 2.0f);
         GameOverScreen.SetActive(true);
