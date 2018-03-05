@@ -87,13 +87,13 @@ public class ObjectSpawn : MonoBehaviour {
         {
             GameObject crate = Instantiate(longCrate, pos, rot);
             Instantiate(longShadow, pos, rot).transform.parent = crate.transform;
-            crate.GetComponent<BoxController>().charge = Random.Range(0, 3);
+            crate.GetComponent<BoxController>().charge = Random.Range(0, 4);
         }
         else
         {
             GameObject crate = Instantiate(roundCrate, pos, rot);
             Instantiate(roundShadow, pos, rot).transform.parent = crate.transform;
-            crate.GetComponent<BoxController>().charge = Random.Range(0, 3);
+            crate.GetComponent<BoxController>().charge = Random.Range(0, 4);
         }
     }
 
