@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject projectile;
     public GameObject GameOverScreen;
     public GameObject gameOverMenu;
+    public GameObject aim;
     public AnimationClip deathAni;
 
 
@@ -132,7 +133,7 @@ public class PlayerController : MonoBehaviour {
         {
             rotationZ += Mathf.Pow(moveHorizontal, 3) / 2;
         }
-        else
+        else if (Mathf.Abs(rotationZ) > 2)
         {
             rotationZ -= Mathf.Sign(rotationZ) / 2;
         }
@@ -174,6 +175,7 @@ public class PlayerController : MonoBehaviour {
                 {
                     Instantiate(projectile, harpoon.transform.position, harpoon.transform.rotation).transform.parent = harpoon.transform;
                     harpoonPrimed = true;
+                    aim.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 128);
                     audiosource.Stop();
                 }
             }
@@ -184,6 +186,7 @@ public class PlayerController : MonoBehaviour {
             audiosource.volume = 1;
             if (harpoonPrimed)
             {
+                aim.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 128);
                 harpoonPrimed = false;
             }
         }
