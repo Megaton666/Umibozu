@@ -17,9 +17,9 @@ public class LevelManager : MonoBehaviour {
     public float level3Time;
     public float level4Time;
     public int level;
-    public bool tutorial;
 
 
+    private bool tutorial;
     private new RemoteZoom camera;
     private AudioSource audiosource;
     private ObjectSpawn spawner;
@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour {
         camera = GameObject.Find("Main Camera").GetComponent<RemoteZoom>();
         startOfLevel = Time.time;
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
+        tutorial = ToBool(PlayerPrefs.GetInt("Tutorial", 1));
         if (level == 1 && tutorial) StartCoroutine(Tutorial());
         instructions.text = "";
     }
@@ -185,6 +186,17 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+    bool ToBool(int number)
+    {
+        if (number == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(3);
@@ -211,7 +223,7 @@ public class LevelManager : MonoBehaviour {
         instructions.text = "";
         yield return new WaitForSeconds(0.5f);
         instructions.text = "Picking up crates grants you single-use abilities";
-        spawner.SpawnCrate(-3, 2);
+        spawner.SpawnCrate(-3, 0);
         yield return new WaitForSeconds(7f);
         instructions.text = "";
         yield return new WaitForSeconds(0.5f);
