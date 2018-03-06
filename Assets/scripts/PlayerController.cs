@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     public AnimationClip anim;
 
 
-    private new Animator animation;
+    private Animator animator;
     private new SpriteRenderer renderer;
     private bool harpoonPrimed = false;
     private float startTime = 0.0f;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
     {
         GameOverScreen.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
-        animation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator Death()
     {
-        animation.runtimeAnimatorController = deathAni;
+        animator.runtimeAnimatorController = deathAni;
         for (int i = 0; i <= 2; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
