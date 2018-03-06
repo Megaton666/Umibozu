@@ -225,6 +225,8 @@ MonoBehaviour:
   Health: 1
   Speed: 0.05
   onDeathSound: {fileID: 8300000, guid: f4a6bc102a674284790a6ddc7204ebe2, type: 3}
+  deathAnim: {fileID: 9100000, guid: e3294377faf934448861661e075fed91, type: 2}
+  anim: {fileID: 7400000, guid: c440d5e29c06957479b815c7e7a73a80, type: 2}
 --- !u!114 &114485712017297856
 MonoBehaviour:
   m_ObjectHideFlags: 1
