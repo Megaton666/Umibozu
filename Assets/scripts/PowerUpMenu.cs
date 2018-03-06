@@ -10,17 +10,15 @@ public class PowerUpMenu : MonoBehaviour {
     public AudioClip RepairSound;
     public AudioClip LightSound;
     public AudioClip airhorn;
-    public Texture searchlightStandard;
-    public Texture searchlightWide;
     public Image BatteryUI;
     public Image RepairUI;
     public Image FlashlightUI;
     public Image SirenUI;
+    public GameObject lightStandard;
+    public GameObject lightWide;
 
     private GameObject siren;
     private GameObject Searchlight;
-    private GameObject lightMask;
-    private GameObject directionalLight;
     private AudioSource audiosource;
     private bool[] inventory;
     void Start()
@@ -28,8 +26,8 @@ public class PowerUpMenu : MonoBehaviour {
         inventory = new bool[] { false, false, false, false };
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         Searchlight = GameObject.Find("Searchlight");
-        lightMask = GameObject.Find("LightMask");
-        directionalLight = GameObject.Find("Directional light");
+        lightStandard.SetActive(true);
+        lightWide.SetActive(false);
         siren = GameObject.FindGameObjectWithTag("Siren");
         siren.SetActive(false);
         
@@ -111,11 +109,11 @@ public class PowerUpMenu : MonoBehaviour {
 
     IEnumerator SearchlightAngle()
     {
-        lightMask.transform.localScale = ScaleObjectX(lightMask.transform.localScale, 1.5f);
-        directionalLight.GetComponent<Light>().cookie = searchlightWide;
+        lightStandard.SetActive(false);
+        lightWide.SetActive(true);
         yield return new WaitForSeconds(5);
-        lightMask.transform.localScale = ScaleObjectX(lightMask.transform.localScale, 1/1.5f);
-        directionalLight.GetComponent<Light>().cookie = searchlightStandard;
+        lightStandard.SetActive(true);
+        lightWide.SetActive(false);
     }
 
     IEnumerator RepairKit()
