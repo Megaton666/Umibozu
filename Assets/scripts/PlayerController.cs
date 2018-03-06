@@ -22,10 +22,11 @@ public class PlayerController : MonoBehaviour {
     public GameObject GameOverScreen;
     public GameObject gameOverMenu;
     public GameObject aim;
-    public AnimationClip deathAni;
+    public RuntimeAnimatorController deathAni;
+    public AnimationClip anim;
 
 
-    private new Animator animation;
+    private Animator animator;
     private new SpriteRenderer renderer;
     private bool harpoonPrimed = false;
     private float startTime = 0.0f;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour {
     {
         GameOverScreen.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
-        animation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
@@ -195,12 +196,18 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator Death()
     {
-        animation.Play(deathAni.name, 0);
-        yield return new WaitForSeconds(deathAni.length);
+        animator.runtimeAnimatorController = deathAni;
+        for (int i = 0; i <= 2; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(anim.length);
         GetComponent<AudioSource>().Stop();
         GameObject.Find("Main Camera").GetComponents<AudioSource>()[0].Stop();
         GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].Stop();
-        GameObject.Find("Main Camera").GetComponents<AudioSource>()[2].Stop();
+        GameObject.Find("SFX Manager").GetComponents<AudioSource>()[0].Stop();
+        GameObject.Find("SFX Manager").GetComponents<AudioSource>()[1].Stop();
+        GameObject.Find("SFX Manager").GetComponents<AudioSource>()[2].Stop();
         audiosource.Stop();
         audiosource.PlayOneShot(GameoverSound, 2.0f);
         GameOverScreen.SetActive(true);
