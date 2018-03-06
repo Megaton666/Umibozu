@@ -21,16 +21,17 @@ public class CursorController : MonoBehaviour {
     }
 	
 	void FixedUpdate () {
-        float distance = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition),(transform.position));
-        if (distance > range && InRange == true)
-        {
-            Cursor.SetCursor(CursorTrans, hotspot, CursorMode.Auto);
-            InRange = false;
-        }
-        else if (distance <= range/* && InRange == false*/)
-        {
-            Cursor.SetCursor(CursorOpaque, hotspot, CursorMode.Auto);
-            InRange = true;
-        }
+        Cursor.visible = false;
+        //float distance = Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition),(transform.position));
+        //if (distance > range && InRange == true)
+        //{
+        //    Cursor.SetCursor(CursorTrans, hotspot, CursorMode.Auto);
+        //    InRange = false;
+        //}
+        //else if (distance <= range)
+        //{
+        //    Cursor.SetCursor(CursorOpaque, hotspot, CursorMode.Auto);
+        //    InRange = true;
+        //}
     } 
 }

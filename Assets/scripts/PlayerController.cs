@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour {
         {
             rotationZ += Mathf.Pow(moveHorizontal, 3) / 2;
         }
-        else
+        else if (Mathf.Abs(rotationZ) > 2)
         {
             rotationZ -= Mathf.Sign(rotationZ) / 2;
         }
