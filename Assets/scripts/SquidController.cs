@@ -9,8 +9,12 @@ public class SquidController : MonoBehaviour {
     public AudioClip onDeathSound;
     public AudioClip shootSound;
     public Object inkBall;
+    public RuntimeAnimatorController deathAnim;
+    public AnimationClip anim;
 
+    private bool IsAlive = true;
     private GameObject player;
+    private Animator animator;
     private AudioSource audiosource;
     private bool IsSpooked = false;
     private bool InCooldown = true;
@@ -19,6 +23,7 @@ public class SquidController : MonoBehaviour {
     {
 		audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
         player = GameObject.Find("Player");
+        animator = GetComponent<Animator>();
         StartCoroutine(WaitForCooldown());
     }
 	
@@ -47,10 +52,10 @@ public class SquidController : MonoBehaviour {
             Position.y -= 0.02f;
             transform.position = Position;
         }
-        if (Health <= 0)
+        if (Health <= 0 && IsAlive)
         {
-            audiosource.PlayOneShot(onDeathSound);
-            Destroy(gameObject);
+            IsAlive = false;
+            StartCoroutine(OnDeath());
         }
     }
 
@@ -64,7 +69,7 @@ public class SquidController : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Spawn") || other.gameObject.CompareTag("Screen"))
+        if ((other.gameObject.CompareTag("Spawn") || other.gameObject.CompareTag("Screen")) && GetComponent<Collider2D>().enabled)
         {
             Destroy(gameObject);
         }
@@ -89,5 +94,15 @@ public class SquidController : MonoBehaviour {
     {
         yield return new WaitForSeconds(3);
         InCooldown = false;
+    }
+
+    IEnumerator OnDeath()
+    {
+        animator.runtimeAnimatorController = deathAnim;
+        audiosource.PlayOneShot(onDeathSound);
+        Speed = 0;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(anim.length - 0.2f);
+        Destroy(gameObject);
     }
 }

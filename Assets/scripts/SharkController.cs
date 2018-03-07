@@ -34,7 +34,7 @@ public class SharkController : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Spawn") && GetComponent<Collider2D>().enabled)
+        if ((other.gameObject.CompareTag("Spawn") || other.gameObject.CompareTag("Screen")) && GetComponent<Collider2D>().enabled)
         {
             Destroy(gameObject);
            
@@ -46,7 +46,6 @@ public class SharkController : MonoBehaviour {
         audiosource.PlayOneShot(onDeathSound);
         Speed = 0;
         GetComponent<Collider2D>().enabled = false;
-        //Debug.Log("die");
         yield return new WaitForSeconds(anim.length - 0.2f);
         Destroy(gameObject);
     }

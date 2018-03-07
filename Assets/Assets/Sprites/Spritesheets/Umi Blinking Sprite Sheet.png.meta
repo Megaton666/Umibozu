@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: c10f5648f866e3d4d8623e0a81644195
+timeCreated: 1520438619
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Umi Blinking Sprite Sheet_0
+    21300002: Umi Blinking Sprite Sheet_1
+    21300004: Umi Blinking Sprite Sheet_7
+    21300006: Umi Blinking Sprite Sheet_8
+    21300008: Umi Blinking Sprite Sheet_12
+    21300010: Umi Blinking Sprite Sheet_13
+    21300012: Umi Blinking Sprite Sheet_14
+    21300014: Umi Blinking Sprite Sheet_5
+    21300016: Umi Blinking Sprite Sheet_6
+    21300018: Umi Blinking Sprite Sheet_4
+    21300020: Umi Blinking Sprite Sheet_0
+    21300022: Umi Blinking Sprite Sheet_1
+    21300024: Umi Blinking Sprite Sheet_2
+    21300026: Umi Blinking Sprite Sheet_3
+    21300028: Umi Blinking Sprite Sheet_7
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5953
+        y: 2065
+        width: 611
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 7115
+        y: 2023
+        width: 651
+        height: 642
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4819
+        y: 2137
+        width: 608
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 2327
+        width: 505
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 2295
+        width: 536
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 2221
+        width: 559
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 2135
+        width: 579
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Umi Blinking Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 908
+        width: 603
+        height: 639
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

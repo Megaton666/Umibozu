@@ -122,6 +122,8 @@ MonoBehaviour:
   onDeathSound: {fileID: 8300000, guid: f4a6bc102a674284790a6ddc7204ebe2, type: 3}
   shootSound: {fileID: 8300000, guid: 4dcb3c58b0475da46bf53b675c559285, type: 3}
   inkBall: {fileID: 1090644362176690, guid: 923cbe48eb8696b4fa7934ae2a92eac1, type: 2}
+  deathAnim: {fileID: 9100000, guid: 5c4ba95dcd9b56e419b4c8a083014be3, type: 2}
+  anim: {fileID: 7400000, guid: 4ced535b24983d64f93568ece31b5b2b, type: 2}
 --- !u!212 &212284537966084912
 SpriteRenderer:
   m_ObjectHideFlags: 1
