@@ -11,6 +11,7 @@ public class ObjectSpawn : MonoBehaviour {
     public GameObject roundCrate;
     public GameObject squid;
     public GameObject cliff;
+    public GameObject cliff2;
     public GameObject glowingCliff;
 
     private Vector3 center = new Vector3(0, 1, 0);
@@ -119,7 +120,14 @@ public class ObjectSpawn : MonoBehaviour {
         {
             Vector3 pos = new Vector3(x, 7);
             Quaternion rot = Quaternion.FromToRotation(Vector2.zero, Vector2.zero);
-            Instantiate(roundShadow, pos, rot).transform.parent = Instantiate(cliff, pos, rot).transform;
+            if (Random.Range(0, 2) == 0)
+            {
+                Instantiate(roundShadow, pos, rot).transform.parent = Instantiate(cliff, pos, rot).transform;
+            }
+            else
+            {
+                Instantiate(longShadow, pos, rot).transform.parent = Instantiate(cliff2, pos, rot).transform;
+            }
             x += cliff.GetComponent<BoxCollider2D>().size.x;
         }
     }
