@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
     public Text instructions;
     public Light aura;
-    public Object shadow1;
     public Object shadow2;
-    public Object shadow3;
-    public Object shadow4;
+    public Object shadowFinal;
+    public Object eye;
     public AudioClip growl;
     public float level1Time;
     public float level2Time;
@@ -299,6 +299,13 @@ public class LevelManager : MonoBehaviour {
     IEnumerator FinalScene()
     {
         camera.Zoom(6.6f);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
+        Instantiate(shadowFinal);
+        yield return new WaitForSeconds(3);
+        Instantiate(eye, new Vector3(4.5f, 4, 0), new Quaternion(0, 0, 0, 0)) ;
+        Instantiate(eye, new Vector3(-4.5f, 4, 0), new Quaternion(0, 0, 0, 0));
+        audiosource.PlayOneShot(growl, 4.0f);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadSceneAsync("Cut to black", LoadSceneMode.Single);
     }
 }
