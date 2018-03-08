@@ -298,6 +298,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FinalScene()
     {
+        yield return new WaitForSeconds(15);
         camera.Zoom(6.6f);
         yield return new WaitForSeconds(3);
         Instantiate(shadowFinal);
