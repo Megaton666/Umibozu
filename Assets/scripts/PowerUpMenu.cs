@@ -124,7 +124,7 @@ public class PowerUpMenu : MonoBehaviour {
         for (int i = Health; i < MaxHealth; i++) 
         {
             PlayerScript.MaxSpeed = 0;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             PlayerScript.MaxSpeed = PlayerScript.MaxSpeedInit;
             PlayerScript.Health++;
         }

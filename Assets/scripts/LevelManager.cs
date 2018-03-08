@@ -135,7 +135,7 @@ public class LevelManager : MonoBehaviour {
                 cooldown = Random.Range(0.5f, 2.0f);
             }
 
-            if (aura.cookieSize > 8)
+            if (aura.cookieSize > 9)
             {
                 aura.cookieSize -= 0.01f;
             }
@@ -174,11 +174,11 @@ public class LevelManager : MonoBehaviour {
                 cooldown = Random.Range(0.5f, 1.5f);
             }
 
-            if (aura.cookieSize > 4)
+            if (aura.cookieSize > 6)
             {
                 aura.cookieSize -= 0.01f;
             }
-            if (Time.time - startOfLevel >= level3Time)
+            if (Time.time - startOfLevel >= level4Time)
             {
                 StartCoroutine(FinalScene());
                 level = 0;
