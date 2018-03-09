@@ -196,6 +196,7 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator Death()
     {
+        MaxSpeed = 0;
         animator.runtimeAnimatorController = deathAni;
         for (int i = 0; i <= 2; i++)
         {
