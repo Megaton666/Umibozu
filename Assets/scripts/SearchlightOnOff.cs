@@ -39,7 +39,7 @@ public class SearchlightOnOff : MonoBehaviour {
         }
         else if (battery < 25)
         {
-            battery += 0.01f;
+            battery += 0.015f;
         }
     }
 

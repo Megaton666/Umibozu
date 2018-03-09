@@ -245,7 +245,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator FirstScene()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15);
         Vector3 pointOfOrigin = new Vector3(10, -7, 0);
         Vector3 dest = new Vector3(0, 0, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
@@ -262,7 +262,7 @@ public class LevelManager : MonoBehaviour {
     }
     IEnumerator SecondScene()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15);
         Vector3 pointOfOrigin = new Vector3(-10, 1, 0);
         Vector3 dest = new Vector3(0, 0, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);
@@ -280,7 +280,7 @@ public class LevelManager : MonoBehaviour {
 
     IEnumerator ThirdScene()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15);
         Vector3 pointOfOrigin = new Vector3(0, -6, 0);
         Vector3 dest = new Vector3(0, 6, 0);
         Quaternion rot = Quaternion.FromToRotation(Vector2.up, dest - pointOfOrigin);

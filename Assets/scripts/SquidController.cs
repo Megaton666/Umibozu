@@ -79,7 +79,7 @@ public class SquidController : MonoBehaviour {
     IEnumerator SpitInk()
     {
         InCooldown = true;
-        if (Random.Range(0, 3) == 0)
+        if (Random.Range(0, 4) == 0)
         {
             Quaternion rot = Quaternion.FromToRotation(Vector2.up, Vector2.right);
             Instantiate(inkBall, transform.position, rot);
@@ -87,7 +87,7 @@ public class SquidController : MonoBehaviour {
             Instantiate(inkBall, transform.position, rot);
             audiosource.PlayOneShot(shootSound, 0.5f);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         InCooldown = false;
     }
 
