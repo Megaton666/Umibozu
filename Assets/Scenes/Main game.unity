@@ -756,6 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304ea4a7b9113b143b0f6d25a233ac8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: 5ede44f68f4625c4a8165ec37fdbfff6, type: 3}
 --- !u!212 &209098478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3351,8 +3352,8 @@ MonoBehaviour:
   level1Time: 60
   level2Time: 60
   level3Time: 60
-  level4Time: 60
-  level: 1
+  level4Time: 1
+  level: 4
 --- !u!1 &1503604551
 GameObject:
   m_ObjectHideFlags: 0

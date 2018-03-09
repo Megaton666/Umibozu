@@ -44,17 +44,18 @@ public class SquidController : MonoBehaviour {
         }
         else
         {
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = transform.position - player.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             Vector3 Position = transform.position;
-            Position += transform.up * Speed;
+            Position -= transform.up * Speed;
             Position.y -= 0.02f;
             transform.position = Position;
         }
         if (Health <= 0 && IsAlive)
         {
             IsAlive = false;
+            Destroy(transform.GetChild(0).gameObject);
             StartCoroutine(OnDeath());
         }
     }

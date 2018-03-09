@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour {
 
-
+    public Texture2D cursor;
 
 	void Start () {
-        Cursor.visible = false;
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
 
     }
 	
 	void FixedUpdate () {
-        Cursor.visible = false;
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
     } 
 }

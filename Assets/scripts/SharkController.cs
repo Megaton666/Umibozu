@@ -27,6 +27,7 @@ public class SharkController : MonoBehaviour {
         if (Health <= 0 && IsAlive)
         {
             IsAlive = false;
+            Destroy(transform.GetChild(0).gameObject);
             StartCoroutine(OnDeath());
         }
 	}
