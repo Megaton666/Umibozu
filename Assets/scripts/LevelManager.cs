@@ -235,9 +235,9 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(8f);
         instructions.text = "";
         yield return new WaitForSeconds(5f);
-        instructions.text = "Level 1";
-        yield return new WaitForSeconds(3f);
-        instructions.text = "";
+        instructions.text = "17th February, 1891: \n We have entered the sea of the Umibōzu … There are sharks everywhere, the biggest sharks I have ever seen. They look like they could swallow the boat whole.";
+        yield return new WaitForSeconds(8f);
+        instructions.text = " ";
         tutorial = false;
         cooldown = Random.Range(1.5f, 3.5f);
         startOfLevel = Time.time;
@@ -253,10 +253,10 @@ public class LevelManager : MonoBehaviour {
         camera.Zoom(5.4f);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 1.0f);
-        yield return new WaitForSeconds(7f);
-        instructions.text = "Level 2";
-        yield return new WaitForSeconds(3f);
-        instructions.text = "";
+        yield return new WaitForSeconds(5f);
+        instructions.text = "20th February, 1891: \n ”We haven’t seen the sun for days now. The fog grows thicker and thicker for every day. We must be getting close.“ ";
+        yield return new WaitForSeconds(8f);
+        instructions.text = " ";
         level = 2;
         startOfLevel = Time.time;
     }
@@ -270,10 +270,10 @@ public class LevelManager : MonoBehaviour {
         camera.Zoom(5.8f);
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 2.0f);
-        yield return new WaitForSeconds(7f);
-        instructions.text = "Level 3";
-        yield return new WaitForSeconds(3f);
-        instructions.text = "";
+        yield return new WaitForSeconds(5f);
+        instructions.text = "25th February, 1891: \n “We are now far from land and these waters are deep, yet giant cliffs seem to appear out of nowhere. Not only dangerous cliffs are in these deep waters but also the largest squids ever known to man. Lucky, I brought my harpoon.”";
+        yield return new WaitForSeconds(8f);
+        instructions.text = " ";
         level = 3;
         startOfLevel = Time.time;
     }
@@ -288,10 +288,10 @@ public class LevelManager : MonoBehaviour {
         camera.Zoom(6.2f);
         yield return new WaitForSeconds(2f);
         audiosource.PlayOneShot(growl, 3.0f);
-        yield return new WaitForSeconds(7f);
-        instructions.text = "Level 4";
-        yield return new WaitForSeconds(3f);
-        instructions.text = "";
+        yield return new WaitForSeconds(5f);
+        instructions.text = "1st March, 1891: \n “In the beginning I thought the growling was just in my head, but the sound now keeps me awake at night. Yesterday I saw a large shadow move past in the water, larger than anything I’ve seen so far. I wonder If I will live to tell the tale of the Umibozu.”";
+        yield return new WaitForSeconds(8f);
+        instructions.text = " ";
         level = 4;
         startOfLevel = Time.time;
     }
