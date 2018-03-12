@@ -51,9 +51,13 @@ public class LevelManager : MonoBehaviour {
                     {
                         spawner.SpawnSharkRandom(15);
                     }
-                    else
+                    else if (randNum >= 80 && randNum < 90)
                     {
                         spawner.SpawnCrateRandom();
+                    }
+                    else
+                    {
+                        spawner.SpawnCliffsRandom(Random.Range(1, 3));
                     }
                     timestamp = Time.time + cooldown;
                     cooldown = Random.Range(1.5f, 3.0f);
@@ -80,11 +84,11 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 50 && randNum < 80)
+                else if (randNum >= 50 && randNum < 75)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 80 && randNum < 95)
+                else if (randNum >= 75 && randNum < 80)
                 {
                     spawner.SpawnCrateRandom();
                 }
@@ -115,15 +119,15 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 35 && randNum < 70)
+                else if (randNum >= 35 && randNum < 50)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 70 && randNum < 80)
+                else if (randNum >= 50 && randNum < 60)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else if (randNum >= 80 && randNum < 90)
+                else if (randNum >= 60 && randNum < 90)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
                 }
@@ -150,19 +154,19 @@ public class LevelManager : MonoBehaviour {
             if (Time.time >= timestamp)
             {
                 int randNum = Random.Range(0, 100);
-                if (randNum < 40)
+                if (randNum < 35)
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 40 && randNum < 80)
+                else if (randNum >= 35 && randNum < 65)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 80 && randNum < 85)
+                else if (randNum >= 65 && randNum < 80)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else if (randNum >= 85 && randNum < 95)
+                else if (randNum >= 80 && randNum < 90)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
                 }
