@@ -8,6 +8,20 @@ public class LevelManager : MonoBehaviour {
 
     public Text instructions;
     public Light aura;
+    public Image WASD;
+    public Image LMB;
+    public Image RMB;
+    public Image harpoonTut;
+    public Image lightTut;
+    public Image warningTut;
+    public Image crateTut;
+    public Image abilityTut;
+    public Image batTut;
+    public Image repTut;
+    public Image flashTut;
+    public Image sirenTut;
+    public Image escTut;
+    public Object endgameMusic;
     public Object shadow2;
     public Object shadowFinal;
     public Object eye;
@@ -51,13 +65,9 @@ public class LevelManager : MonoBehaviour {
                     {
                         spawner.SpawnSharkRandom(15);
                     }
-                    else if (randNum >= 80 && randNum < 90)
-                    {
-                        spawner.SpawnCrateRandom();
-                    }
                     else
                     {
-                        spawner.SpawnCliffsRandom(Random.Range(1, 3));
+                        spawner.SpawnCrateRandom();
                     }
                     timestamp = Time.time + cooldown;
                     cooldown = Random.Range(1.5f, 3.0f);
@@ -84,11 +94,11 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 50 && randNum < 75)
+                else if (randNum >= 50 && randNum < 80)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 75 && randNum < 80)
+                else if (randNum >= 80 && randNum < 95)
                 {
                     spawner.SpawnCrateRandom();
                 }
@@ -119,15 +129,15 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 35 && randNum < 50)
+                else if (randNum >= 35 && randNum < 70)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 50 && randNum < 60)
+                else if (randNum >= 70 && randNum < 80)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else if (randNum >= 60 && randNum < 90)
+                else if (randNum >= 80 && randNum < 90)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
                 }
@@ -154,19 +164,19 @@ public class LevelManager : MonoBehaviour {
             if (Time.time >= timestamp)
             {
                 int randNum = Random.Range(0, 100);
-                if (randNum < 35)
+                if (randNum < 40)
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 35 && randNum < 65)
+                else if (randNum >= 40 && randNum < 80)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 65 && randNum < 80)
+                else if (randNum >= 80 && randNum < 85)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else if (randNum >= 80 && randNum < 90)
+                else if (randNum >= 85 && randNum < 95)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
                 }
@@ -204,40 +214,52 @@ public class LevelManager : MonoBehaviour {
     IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(3);
-        instructions.text = "Move the boat with the WASD keys";
+        WASD.enabled = true;
         yield return new WaitForSeconds(5);
-        instructions.text = "";
+        WASD.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "Fire the harpoon by holding down and then releasing the left mouse button";
+        LMB.enabled = true;
         yield return new WaitForSeconds(5);
-        instructions.text = "";
+        LMB.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "Turn the spotlight on and off by pressing the right mouse button";
+        RMB.enabled = true;
         yield return new WaitForSeconds(5);
-        instructions.text = "";
+        RMB.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "Shine your light on hidden objects to reveal their true nature";
+        harpoonTut.enabled = true;
+        lightTut.enabled = true;
         yield return new WaitForSeconds(2);
         spawner.SpawnSharkTutorial(65, 15);
         yield return new WaitForSeconds(5);
-        instructions.text = "";
+        harpoonTut.enabled = false;
+        lightTut.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "Keeping the spotlight turned on drains your battery";
+        warningTut.enabled = true;
         yield return new WaitForSeconds(5);
-        instructions.text = "";
+        warningTut.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "Picking up crates grants you single-use abilities";
+        crateTut.enabled = true;
         spawner.SpawnCrate(-3, 0);
         yield return new WaitForSeconds(7f);
-        instructions.text = "";
+        crateTut.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "The ability menu shows which abilities can be used \n Press the corresponding keys to select and ability";
+        abilityTut.enabled = true;
         yield return new WaitForSeconds(6);
-        instructions.text = "";
+        abilityTut.enabled = false;
         yield return new WaitForSeconds(0.5f);
-        instructions.text = "The different abilities are, respectively, battery recharge, repair kit, increased spotlight spread, and a siren that scares away enemies";
+        batTut.enabled = true;
+        repTut.enabled = true;
+        flashTut.enabled = true;
+        sirenTut.enabled = true;
         yield return new WaitForSeconds(8f);
-        instructions.text = "";
+        batTut.enabled = false;
+        repTut.enabled = false;
+        flashTut.enabled = false;
+        sirenTut.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        escTut.enabled = true;
+        yield return new WaitForSeconds(5f);
+        escTut.enabled = false;
         yield return new WaitForSeconds(5f);
         instructions.text = "17th February, 1891: \n We have entered the sea of the Umibōzu … There are sharks everywhere, the biggest sharks I have ever seen. They look like they could swallow the boat whole.";
         yield return new WaitForSeconds(8f);
@@ -310,7 +332,9 @@ public class LevelManager : MonoBehaviour {
         Instantiate(eye, new Vector3(4.5f, 4, 0), new Quaternion(0, 0, 0, 0)) ;
         Instantiate(eye, new Vector3(-4.5f, 4, 0), new Quaternion(0, 0, 0, 0));
         audiosource.PlayOneShot(growl, 4.0f);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
+        Instantiate(endgameMusic);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadSceneAsync("Cut to black", LoadSceneMode.Single);
     }
 }
