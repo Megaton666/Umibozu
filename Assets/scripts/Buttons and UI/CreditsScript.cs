@@ -16,6 +16,7 @@ public class CreditsScript : MonoBehaviour {
     {
 		if (Input.GetKeyDown("escape"))
         {
+            Destroy(GameObject.FindGameObjectWithTag("Endgame Music"));
             SceneManager.LoadSceneAsync("Title screen", LoadSceneMode.Single);
         }
 	}
@@ -23,6 +24,7 @@ public class CreditsScript : MonoBehaviour {
     IEnumerator TimeLimit()
     {
         yield return new WaitForSeconds(10);
+        Destroy(GameObject.FindGameObjectWithTag("Endgame Music"));
         SceneManager.LoadSceneAsync("Title screen", LoadSceneMode.Single);
     }
 }

@@ -17,6 +17,7 @@ TagManager:
   - EnemyProjectile
   - Rock
   - Glowing Rock
+  - Endgame Music
   layers:
   - Default
   - TransparentFX
