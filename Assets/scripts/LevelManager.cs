@@ -333,7 +333,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(eye, new Vector3(-4.5f, 4, 0), new Quaternion(0, 0, 0, 0));
         audiosource.PlayOneShot(growl, 4.0f);
         yield return new WaitForSeconds(1);
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = 0;
         Instantiate(endgameMusic);
         yield return new WaitForSeconds(4);
         SceneManager.LoadSceneAsync("Cut to black", LoadSceneMode.Single);
