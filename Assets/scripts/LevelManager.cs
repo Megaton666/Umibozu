@@ -129,15 +129,15 @@ public class LevelManager : MonoBehaviour {
                 {
                     spawner.SpawnSharkRandom(15);
                 }
-                else if (randNum >= 35 && randNum < 70)
+                else if (randNum >= 35 && randNum < 60)
                 {
                     spawner.SpawnSquidRandom();
                 }
-                else if (randNum >= 70 && randNum < 80)
+                else if (randNum >= 60 && randNum < 70)
                 {
                     spawner.SpawnCrateRandom();
                 }
-                else if (randNum >= 80 && randNum < 90)
+                else if (randNum >= 70 && randNum < 90)
                 {
                     spawner.SpawnCliffsRandom(Random.Range(1, 3));
                 }
@@ -188,7 +188,7 @@ public class LevelManager : MonoBehaviour {
                 cooldown = Random.Range(0.5f, 1.5f);
             }
 
-            if (aura.cookieSize > 6)
+            if (aura.cookieSize > 6.5)
             {
                 aura.cookieSize -= 0.01f;
             }
@@ -248,13 +248,16 @@ public class LevelManager : MonoBehaviour {
         abilityTut.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         batTut.SetActive(true);
-        repTut.SetActive(true); ;
-        flashTut.SetActive(true);
-        sirenTut.SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(2.5f);
         batTut.SetActive(false);
+        repTut.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
         repTut.SetActive(false);
+        flashTut.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
         flashTut.SetActive(false);
+        sirenTut.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
         sirenTut.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         escTut.SetActive(true);
@@ -326,16 +329,16 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(15);
         camera.Zoom(6.6f);
+        yield return new WaitForSeconds(1);
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = 0;
+        Instantiate(endgameMusic);
         yield return new WaitForSeconds(3);
         Instantiate(shadowFinal);
         yield return new WaitForSeconds(3);
         Instantiate(eye, new Vector3(4.5f, 4, 0), new Quaternion(0, 0, 0, 0)) ;
         Instantiate(eye, new Vector3(-4.5f, 4, 0), new Quaternion(0, 0, 0, 0));
         audiosource.PlayOneShot(growl, 4.0f);
-        yield return new WaitForSeconds(1);
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = 0;
-        Instantiate(endgameMusic);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadSceneAsync("Cut to black", LoadSceneMode.Single);
     }
 }
