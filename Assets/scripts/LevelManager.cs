@@ -333,7 +333,7 @@ public class LevelManager : MonoBehaviour {
         GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = 0;
         GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].volume = 0;
         Instantiate(endgameMusic);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         Instantiate(shadowFinal);
         yield return new WaitForSeconds(3);
         Instantiate(eye, new Vector3(4.5f, 4, 0), new Quaternion(0, 0, 0, 0)) ;

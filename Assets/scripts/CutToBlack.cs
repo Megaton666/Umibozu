@@ -12,7 +12,7 @@ public class CutToBlack : MonoBehaviour {
 	
 	IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadSceneAsync("Credits", LoadSceneMode.Single);
     }
 }
