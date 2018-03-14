@@ -259,7 +259,7 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         escTut.SetActive(true);
         yield return new WaitForSeconds(5f);
-        escTut.SetActive(true);
+        escTut.SetActive(false);
         yield return new WaitForSeconds(5f);
         instructions.text = "17th February, 1891: \n We have entered the sea of the Umibōzu … There are sharks everywhere, the biggest sharks I have ever seen. They look like they could swallow the boat whole.";
         yield return new WaitForSeconds(8f);
