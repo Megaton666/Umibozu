@@ -4133,7 +4133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1500939854
 Transform:
   m_ObjectHideFlags: 0
@@ -4161,18 +4161,18 @@ MonoBehaviour:
   instructions: {fileID: 1526460611}
   aura: {fileID: 528850238}
   WASD: {fileID: 248778453}
-  LMB: {fileID: 139506737}
-  RMB: {fileID: 1502654831}
-  harpoonTut: {fileID: 1083631243}
-  lightTut: {fileID: 1646510884}
-  warningTut: {fileID: 1226943806}
-  crateTut: {fileID: 1802195136}
-  abilityTut: {fileID: 120610972}
-  batTut: {fileID: 1170569171}
-  repTut: {fileID: 1197331177}
-  flashTut: {fileID: 982018967}
-  sirenTut: {fileID: 1303507165}
-  escTut: {fileID: 1248049604}
+  LMB: {fileID: 139506734}
+  RMB: {fileID: 1502654828}
+  harpoonTut: {fileID: 1083631240}
+  lightTut: {fileID: 1646510883}
+  warningTut: {fileID: 1226943804}
+  crateTut: {fileID: 1802195134}
+  abilityTut: {fileID: 120610970}
+  batTut: {fileID: 1170569169}
+  repTut: {fileID: 1197331175}
+  flashTut: {fileID: 982018965}
+  sirenTut: {fileID: 1303507163}
+  escTut: {fileID: 1248049603}
   endgameMusic: {fileID: 1473799301202546, guid: 8514eaf6fee1de841879ef7de5cfdcf6,
     type: 2}
   shadow2: {fileID: 1371833052055414, guid: 8aafde3c377d98f4593e6f97aaa8f66d, type: 2}
@@ -4646,7 +4646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Instructions
+  m_Text: 
 --- !u!222 &1526460612
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4668,8 +4668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -600}
-  m_SizeDelta: {x: 450, y: 350}
+  m_AnchoredPosition: {x: 0, y: -708.8}
+  m_SizeDelta: {x: 450, y: 241.2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1538587064
 GameObject:
@@ -4886,7 +4886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1600014410
 Transform:
   m_ObjectHideFlags: 0
@@ -5425,6 +5425,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.x
       value: 28.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 224013829318889762, guid: b6b89a76f64c1a94e9b5df2c66d79715,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6b89a76f64c1a94e9b5df2c66d79715, type: 2}
