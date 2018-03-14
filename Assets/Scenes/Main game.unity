@@ -4133,7 +4133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1500939854
 Transform:
   m_ObjectHideFlags: 0
@@ -4160,7 +4160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 1526460611}
   aura: {fileID: 528850238}
-  WASD: {fileID: 248778454}
+  WASD: {fileID: 248778453}
   LMB: {fileID: 139506737}
   RMB: {fileID: 1502654831}
   harpoonTut: {fileID: 1083631243}
@@ -4184,7 +4184,7 @@ MonoBehaviour:
   level2Time: 100
   level3Time: 200
   level4Time: 180
-  level: 3
+  level: 1
 --- !u!1 &1502654828
 GameObject:
   m_ObjectHideFlags: 0
