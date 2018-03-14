@@ -331,6 +331,7 @@ public class LevelManager : MonoBehaviour {
         camera.Zoom(6.6f);
         yield return new WaitForSeconds(1);
         GameObject.Find("Main Camera").GetComponent<AudioSource>().volume = 0;
+        GameObject.Find("Main Camera").GetComponents<AudioSource>()[1].volume = 0;
         Instantiate(endgameMusic);
         yield return new WaitForSeconds(3);
         Instantiate(shadowFinal);
