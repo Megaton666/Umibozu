@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
         GameOverScreen.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponent<AudioSource>();
+        audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[3];
         harpoon = transform.Find("Harpoon");
         MaxSpeed = MaxSpeedInit;
         Accel = AccelInit;
