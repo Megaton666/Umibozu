@@ -4395,7 +4395,7 @@ MonoBehaviour:
   level2Time: 75
   level3Time: 150
   level4Time: 120
-  level: 3
+  level: 1
 --- !u!1 &1502654828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,7 +5408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1735355548
 Transform:
   m_ObjectHideFlags: 0
