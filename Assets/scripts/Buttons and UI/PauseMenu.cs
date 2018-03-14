@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour {
 
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("Player").GetComponent<PlayerController>().Health != 0)
         {
             Time.timeScale = 1.0f;
             gameObject.SetActive(false);

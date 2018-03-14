@@ -1989,7 +1989,7 @@ GameObject:
   - component: {fileID: 696938760}
   - component: {fileID: 696938759}
   m_Layer: 5
-  m_Name: Image
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4184,7 +4184,7 @@ MonoBehaviour:
   level2Time: 100
   level3Time: 200
   level4Time: 180
-  level: 1
+  level: 3
 --- !u!1 &1502654828
 GameObject:
   m_ObjectHideFlags: 0

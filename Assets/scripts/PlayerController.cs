@@ -213,6 +213,7 @@ public class PlayerController : MonoBehaviour {
         audiosource.PlayOneShot(GameoverSound, 2.0f);
         GameOverScreen.SetActive(true);
         gameOverMenu.SetActive(true);
+        GameObject.Find("esc").SetActive(false);
         Time.timeScale = 0;
     }
     IEnumerator InvulnTimer()
