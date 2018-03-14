@@ -49,14 +49,14 @@ public class SearchlightOnOff : MonoBehaviour {
         {
             IsOn = true;
             audiosource.pitch = 1.2f;
-            audiosource.PlayOneShot(sound);
+            audiosource.PlayOneShot(sound, 0.7f);
             Light.SetActive(true);
         }
         else
         {
             audiosource.pitch = 1.0f;
             IsOn = false;
-            audiosource.PlayOneShot(sound);
+            audiosource.PlayOneShot(sound, 0.7f);
             Light.SetActive(false);
         }
     }

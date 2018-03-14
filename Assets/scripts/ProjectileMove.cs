@@ -19,7 +19,7 @@ public class ProjectileMove : MonoBehaviour
     {
         audiosource = GameObject.FindGameObjectWithTag("SFX Manager").GetComponents<AudioSource>()[2];
         audiosource.clip = harpoonHold;
-        audiosource.volume = 1f;
+        audiosource.volume = 0.7f;
         audiosource.Play();
         Distance = 0;
         speed = 0.0f;
@@ -32,7 +32,7 @@ public class ProjectileMove : MonoBehaviour
             audiosource.Stop();
             transform.parent = null;
             speed = 0.2f;
-            audiosource.PlayOneShot(harpoonFire);
+            audiosource.PlayOneShot(harpoonFire, 0.7f);
         }
         Vector3 Position = transform.position;
         Position += transform.up * speed;
