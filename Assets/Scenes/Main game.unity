@@ -4183,8 +4183,8 @@ MonoBehaviour:
   level1Time: 60
   level2Time: 100
   level3Time: 200
-  level4Time: 180
-  level: 1
+  level4Time: 0
+  level: 4
 --- !u!1 &1502654828
 GameObject:
   m_ObjectHideFlags: 0
