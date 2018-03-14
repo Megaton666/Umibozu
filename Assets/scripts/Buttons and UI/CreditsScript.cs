@@ -23,7 +23,7 @@ public class CreditsScript : MonoBehaviour {
 
     IEnumerator TimeLimit()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         Destroy(GameObject.FindGameObjectWithTag("Endgame Music"));
         SceneManager.LoadSceneAsync("Title screen", LoadSceneMode.Single);
     }
