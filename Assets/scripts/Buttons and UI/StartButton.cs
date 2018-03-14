@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour {
     public int tutorial;
+    public bool playIntro;
 
     void Start()
     {
@@ -16,6 +17,13 @@ public class StartButton : MonoBehaviour {
     void TaskOnClick()
     {
         PlayerPrefs.SetInt("Tutorial", tutorial);
-        SceneManager.LoadSceneAsync("Main game", LoadSceneMode.Single);
+        if (playIntro)
+        {
+            SceneManager.LoadSceneAsync("Intro", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync("Main game", LoadSceneMode.Single);
+        }
     }
 }

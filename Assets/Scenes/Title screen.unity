@@ -572,6 +572,11 @@ Prefab:
       propertyPath: m_Text
       value: Start (skip tutorial)
       objectReference: {fileID: 0}
+    - target: {fileID: 114426981404988098, guid: 251acd694dba88443bf26fc9d32d4d4c,
+        type: 2}
+      propertyPath: playIntro
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 251acd694dba88443bf26fc9d32d4d4c, type: 2}
   m_IsPrefabParent: 0
@@ -1315,6 +1320,11 @@ Prefab:
     - target: {fileID: 114426981404988098, guid: 251acd694dba88443bf26fc9d32d4d4c,
         type: 2}
       propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426981404988098, guid: 251acd694dba88443bf26fc9d32d4d4c,
+        type: 2}
+      propertyPath: playIntro
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

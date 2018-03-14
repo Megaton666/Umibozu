@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    public Text instructions;
     public Light aura;
     public GameObject WASD;
     public GameObject LMB;
@@ -21,10 +20,18 @@ public class LevelManager : MonoBehaviour {
     public GameObject flashTut;
     public GameObject sirenTut;
     public GameObject escTut;
+    public GameObject story1;
+    public GameObject story2;
+    public GameObject story3;
+    public GameObject story4;
     public Object endgameMusic;
     public Object shadow2;
     public Object shadowFinal;
     public Object eye;
+    public AudioClip story1sound;
+    public AudioClip story2sound;
+    public AudioClip story3sound;
+    public AudioClip story4sound;
     public AudioClip growl;
     public float level1Time;
     public float level2Time;
@@ -48,7 +55,6 @@ public class LevelManager : MonoBehaviour {
         spawner = GameObject.FindGameObjectWithTag("Spawn").GetComponent<ObjectSpawn>();
         tutorial = ToBool(PlayerPrefs.GetInt("Tutorial", 1));
         if (level == 1 && tutorial) StartCoroutine(Tutorial());
-        instructions.text = "";
     }
 
 
@@ -264,9 +270,10 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(5f);
         escTut.SetActive(false);
         yield return new WaitForSeconds(5f);
-        instructions.text = "17th February, 1891: \n We have entered the sea of the Umibōzu … There are sharks everywhere, the biggest sharks I have ever seen. They look like they could swallow the boat whole.";
-        yield return new WaitForSeconds(8f);
-        instructions.text = " ";
+        story1.SetActive(true);
+        audiosource.PlayOneShot(story1sound);
+        yield return new WaitForSeconds(story1sound.length);
+        story1.SetActive(false);
         tutorial = false;
         cooldown = Random.Range(1.5f, 3.5f);
         startOfLevel = Time.time;
@@ -283,9 +290,10 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 1.0f);
         yield return new WaitForSeconds(5f);
-        instructions.text = "20th February, 1891: \n ”We haven’t seen the sun for days now. The fog grows thicker and thicker for every day. We must be getting close.“ ";
-        yield return new WaitForSeconds(8f);
-        instructions.text = " ";
+        story2.SetActive(true);
+        audiosource.PlayOneShot(story2sound);
+        yield return new WaitForSeconds(story2sound.length);
+        story2.SetActive(false);
         level = 2;
         startOfLevel = Time.time;
     }
@@ -300,9 +308,10 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         audiosource.PlayOneShot(growl, 2.0f);
         yield return new WaitForSeconds(5f);
-        instructions.text = "25th February, 1891: \n “We are now far from land and these waters are deep, yet giant cliffs seem to appear out of nowhere. Not only dangerous cliffs are in these deep waters but also the largest squids ever known to man. Lucky, I brought my harpoon.”";
-        yield return new WaitForSeconds(8f);
-        instructions.text = " ";
+        story3.SetActive(true);
+        audiosource.PlayOneShot(story3sound);
+        yield return new WaitForSeconds(story3sound.length);
+        story3.SetActive(false);
         level = 3;
         startOfLevel = Time.time;
     }
@@ -318,9 +327,10 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         audiosource.PlayOneShot(growl, 3.0f);
         yield return new WaitForSeconds(5f);
-        instructions.text = "1st March, 1891: \n “In the beginning I thought the growling was just in my head, but the sound now keeps me awake at night. Yesterday I saw a large shadow move past in the water, larger than anything I’ve seen so far. I wonder If I will live to tell the tale of the Umibozu.”";
-        yield return new WaitForSeconds(8f);
-        instructions.text = " ";
+        story4.SetActive(true);
+        audiosource.PlayOneShot(story4sound);
+        yield return new WaitForSeconds(story4sound.length);
+        story4.SetActive(false);
         level = 4;
         startOfLevel = Time.time;
     }
