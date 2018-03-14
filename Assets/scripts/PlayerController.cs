@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour {
         {
             startTime = Time.time;
             audiosource.clip = HarpoonLoad;
-            audiosource.volume = 1;
+            audiosource.volume = 0.7f;
             audiosource.Play();
         }
 
