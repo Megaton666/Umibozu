@@ -272,7 +272,7 @@ public class LevelManager : MonoBehaviour {
         escTut.SetActive(false);
         yield return new WaitForSeconds(5f);
         story1.SetActive(true);
-        audiosource.PlayOneShot(story1sound);
+        audiosource.PlayOneShot(story1sound, 2.5f);
         yield return new WaitForSeconds(story1sound.length);
         story1.SetActive(false);
         tutorial = false;
@@ -292,7 +292,7 @@ public class LevelManager : MonoBehaviour {
         audiosource.PlayOneShot(growl, 1.0f);
         yield return new WaitForSeconds(5f);
         story2.SetActive(true);
-        audiosource.PlayOneShot(story2sound);
+        audiosource.PlayOneShot(story2sound, 2.5f);
         yield return new WaitForSeconds(story2sound.length);
         story2.SetActive(false);
         level = 2;
@@ -310,7 +310,7 @@ public class LevelManager : MonoBehaviour {
         audiosource.PlayOneShot(growl, 2.0f);
         yield return new WaitForSeconds(5f);
         story3.SetActive(true);
-        audiosource.PlayOneShot(story3sound);
+        audiosource.PlayOneShot(story3sound, 2.5f);
         yield return new WaitForSeconds(story3sound.length);
         story3.SetActive(false);
         level = 3;
