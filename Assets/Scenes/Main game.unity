@@ -2656,7 +2656,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4386,6 +4386,8 @@ MonoBehaviour:
   shadowFinal: {fileID: 1490048952710894, guid: bdc29e48f0ab33047a99f3db91ee0960,
     type: 2}
   eye: {fileID: 1866347108932220, guid: 739a457e49b2a924e9cf8e70468f4c35, type: 2}
+  fadeToBlack: {fileID: 1994710638097542, guid: 6f031f09de5b4e744858a252b4975519,
+    type: 2}
   story1sound: {fileID: 8300000, guid: 41f4c816d0f14a945afcf59228c3d30b, type: 3}
   story2sound: {fileID: 8300000, guid: 13dbcffcf1b916a44b23f6a262cc6aaa, type: 3}
   story3sound: {fileID: 8300000, guid: 98706985bf8ff7a4c934adce3a14629d, type: 3}
@@ -4394,8 +4396,8 @@ MonoBehaviour:
   level1Time: 45
   level2Time: 75
   level3Time: 150
-  level4Time: 120
-  level: 1
+  level4Time: 0
+  level: 4
 --- !u!1 &1502654828
 GameObject:
   m_ObjectHideFlags: 0

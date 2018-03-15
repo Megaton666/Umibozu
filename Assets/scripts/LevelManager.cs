@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour {
     public Object shadow2;
     public Object shadowFinal;
     public Object eye;
+    public Object fadeToBlack;
     public AudioClip story1sound;
     public AudioClip story2sound;
     public AudioClip story3sound;
@@ -349,7 +350,9 @@ public class LevelManager : MonoBehaviour {
         Instantiate(eye, new Vector3(4.5f, 4, 0), new Quaternion(0, 0, 0, 0)) ;
         Instantiate(eye, new Vector3(-4.5f, 4, 0), new Quaternion(0, 0, 0, 0));
         audiosource.PlayOneShot(growl, 4.0f);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.5f);
+        Instantiate(fadeToBlack);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadSceneAsync("Cut to black", LoadSceneMode.Single);
     }
 }
