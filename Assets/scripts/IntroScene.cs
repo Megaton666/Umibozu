@@ -11,7 +11,7 @@ public class IntroScene : MonoBehaviour {
 	void Start ()
     {
         startTime = Time.time;
-        GetComponent<AudioSource>().PlayOneShot(story);
+        GetComponent<AudioSource>().PlayOneShot(story, 2.5f);
 	}
 	
 
